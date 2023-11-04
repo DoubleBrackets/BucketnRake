@@ -54,5 +54,5 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 64
   liftAngle: 0
-  liftDistance: 1
-  leafInstance: {fileID: 2803082914545553874, guid: 0a41bdfe5d68afb4facb2acbf06f1968, type: 3}
+  liftDistance: 2.4
+  leafPrefab: {fileID: 2803082914545553874, guid: 0a41bdfe5d68afb4facb2acbf06f1968, type: 3}

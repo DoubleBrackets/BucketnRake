@@ -158,7 +158,7 @@ GameObject:
   - component: {fileID: 2097438114042758291}
   m_Layer: 0
   m_Name: TerrainCollider
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -223,9 +223,9 @@ GameObject:
   m_Component:
   - component: {fileID: 184179629182842986}
   - component: {fileID: 677416874442755936}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
