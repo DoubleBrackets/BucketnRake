@@ -1,5 +1,22 @@
 {
   "dependencies": {
+    "com.cysharp.unitask": {
+      "version": "https://github.com/Cysharp/UniTask.git?path=src/UniTask/Assets/Plugins/UniTask",
+      "depth": 0,
+      "source": "git",
+      "dependencies": {},
+      "hash": "5cc97c7f0085624b6ef57853d70b404440060cef"
+    },
+    "com.seanba.super-tiled2unity": {
+      "version": "file:C:/Users/arthu/Downloads/super-tiled2unity.v2.1.1",
+      "depth": 0,
+      "source": "local",
+      "dependencies": {
+        "com.unity.modules.animation": "1.0.0",
+        "com.unity.modules.physics2d": "1.0.0",
+        "com.unity.modules.tilemap": "1.0.0"
+      }
+    },
     "com.unity.2d.animation": {
       "version": "9.0.3",
       "depth": 1,
