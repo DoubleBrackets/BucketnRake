@@ -15,10 +15,10 @@
         },
         "testingTilemap.tmx": {
             "scale": 4,
-            "selectedLayer": 0,
+            "selectedLayer": 1,
             "viewCenter": {
-                "x": 48.625,
-                "y": -58
+                "x": 324.125,
+                "y": -56.375
             }
         }
     },
