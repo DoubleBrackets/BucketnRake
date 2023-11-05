@@ -27,7 +27,7 @@ public class BucketAbility : MonoBehaviour
         {
             if (leafInstance.TryCollectWithBucket())
             {
-                AudioSource.PlayClipAtPoint(collectSFX, transform.position);
+                AudioManager.Instance.PlaySFX(SFX.LeafCollected, transform.position);
             }
         }
     }

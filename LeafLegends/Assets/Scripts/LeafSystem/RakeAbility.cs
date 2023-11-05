@@ -27,7 +27,10 @@ public class RakeAbility : MonoBehaviour
         var leafInstance = coll.GetComponent<LeafInstance>();
         if (leafInstance)
         {
-            leafInstance.TryRake();
+            if (leafInstance.TryRake())
+            {
+                AudioManager.Instance.PlaySFX(SFX.Rake, transform.position);
+            }
         }
     }
 }

@@ -16,13 +16,13 @@ MonoBehaviour:
     GravityAccel: 22
     AirbornHAcceleration: 25
     AirbornHFriction: 25
-    MaxHAirbornSpeed: 6
+    MaxHAirbornSpeed: 7
     JumpVelocity: 9.25
     CoyoteTime: 0.15
     JumpDuration: 0.5
     GroundedHAcceleration: 75
     GroundedHFriction: 50
-    MaxGroundedHSpeed: 6.25
+    MaxGroundedHSpeed: 6.5
     GroundLayerMask:
       serializedVersion: 2
       m_Bits: 64
@@ -51,6 +51,9 @@ MonoBehaviour:
       m_Bits: 64
     CanSlide: 1
     SlideHeightReduction: 1.01
-    SlideMinVelocity: 3
-    SlideFriction: 0
-    SlideGravityAccel: 25
+    SlideMinVelocity: 7
+    SlideEnterMinVelocity: 6.5
+    SlideFriction: 4
+    SlideGravityAccel: 30
+    SlideStaticCooldown: 0.75
+    SlideInitialSpeedBoostRatio: 1.2

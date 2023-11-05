@@ -22,6 +22,7 @@ public partial class ProtagController : MonoBehaviour
     {
         if (TryGroundSwitch())
         {
+            AudioManager.Instance.PlaySFX(SFX.Land, transform.position);
             return;
         }
 
