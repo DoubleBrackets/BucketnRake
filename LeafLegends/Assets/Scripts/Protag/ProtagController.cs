@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using UnityEditor;
 using UnityEngine;
 
@@ -17,9 +18,13 @@ public partial class ProtagController : MonoBehaviour
     private RakeAbility rakeAbility;
 
     [SerializeField]
-    private SpriteRect spriteRen;
+    private GrappleVisuals grappleVisuals;
+
+    [SerializeField]
+    private Transform rotatedBody;
 
     private CharController2DConfig ControllerConfig => controllerConfigSO.Config;
+    private Rigidbody2D Rb => charController.Rb;
 
     private CharController2D.MoveInput currentMoveInput;
 
@@ -145,11 +150,8 @@ public partial class ProtagController : MonoBehaviour
         }
     }
 
-
-    private void FixedUpdate()
+    private void FixedUpdateStates()
     {
-        charController.UpdateControllerState(ControllerConfig, currentMoveInput);
-
         switch (currentState)
         {
             case ProtagStates.Idle:
@@ -174,6 +176,15 @@ public partial class ProtagController : MonoBehaviour
                 FixedUpdateCrouchState();
                 break;
         }
+    }
+
+    private void FixedUpdate()
+    {
+        grappleCooldownTimer -= Time.deltaTime;
+
+        charController.UpdateControllerState(ControllerConfig, currentMoveInput);
+
+        FixedUpdateStates();
 
         currentMoveInput = new CharController2D.MoveInput
         {
@@ -184,6 +195,121 @@ public partial class ProtagController : MonoBehaviour
         if (rakeAbility)
         {
             rakeAbility.CanRake = Mathf.Abs(charController.Velocity.x) > 0.1f;
+        }
+
+        if (ControllerConfig.CanGrapple)
+        {
+            TrySearchForGrapplePoints();
+        }
+
+        UpdateSpriteScaleAndRotation();
+    }
+
+    private void UpdateSpriteScaleAndRotation()
+    {
+        var scale = rotatedBody.localScale;
+        if (inputProvider.HorizontalAxis != 0)
+        {
+            scale.x = inputProvider.HorizontalAxis;
+        }
+
+        rotatedBody.localScale = scale;
+
+        if (charController.CurrentStateContext.stableOnGround)
+        {
+            var currentRot = Mathf.DeltaAngle(0, rotatedBody.rotation.eulerAngles.z);
+            var targetRot = Vector2.SignedAngle(Vector2.up, charController.CurrentStateContext.rayGroundNormal);
+
+            var t = 1 - Mathf.Pow(1 - 0.99f, Time.deltaTime * 10f);
+
+            var newRot = Mathf.Lerp(currentRot, targetRot, t);
+            rotatedBody.rotation = Quaternion.Euler(
+                0,
+                0,
+                newRot
+            );
+        }
+        else
+        {
+            rotatedBody.rotation = Quaternion.identity;
+        }
+    }
+
+    private void TrySearchForGrapplePoints()
+    {
+        if (targetedGrapplePoint != null)
+        {
+            targetedGrapplePoint.IsCurrentTarget(false);
+            grappleVisuals.ClearTarget();
+            FollowCameraScript.Instance.AdditionalTargets.Remove(targetedGrapplePoint.transform);
+            targetedGrapplePoint = null;
+        }
+
+        if (isGrappling || grappleCooldownTimer > 0f)
+        {
+            return;
+        }
+
+        // Find all points in the radius
+        var colliders = Physics2D.OverlapCircleAll(transform.position, ControllerConfig.GrappleRadius, ControllerConfig.GrappleLayerMask);
+
+        var inputVector = new Vector2(inputProvider.HorizontalAxis, inputProvider.VerticalAxis);
+
+        // Choose the point that aligns to the input vector the most
+        GrapplePoint bestCandidate = null;
+        var closestDist = float.MaxValue;
+        var closestSector = int.MaxValue;
+
+        foreach (var coll in colliders)
+        {
+            var grapplePoint = coll.GetComponent<GrapplePoint>();
+
+            if (grapplePoint == null)
+            {
+                continue;
+            }
+
+            // Raycast check if any terrain is in the way
+            Vector2 delta = grapplePoint.transform.position - transform.position;
+            var cast = Physics2D.Raycast(
+                transform.position,
+                delta,
+                delta.magnitude,
+                ControllerConfig.GroundLayerMask);
+
+            if (cast.collider != null)
+            {
+                continue;
+            }
+
+            var angleSector = (int)(Vector2.Angle(delta, inputVector) / 45);
+            var dist = delta.magnitude;
+
+            if (inputVector == Vector2.zero)
+            {
+                angleSector = 0;
+            }
+
+            // Choose the point that is in the same 45 degree cone, and is closest
+            if (angleSector < closestSector)
+            {
+                closestSector = angleSector;
+                closestDist = dist;
+                bestCandidate = grapplePoint;
+            }
+            else if (angleSector == closestSector && dist < closestDist)
+            {
+                closestDist = dist;
+                bestCandidate = grapplePoint;
+            }
+        }
+
+        if (bestCandidate != null)
+        {
+            targetedGrapplePoint = bestCandidate;
+            targetedGrapplePoint.IsCurrentTarget(true);
+            grappleVisuals.IndicateTarget(bestCandidate);
+            FollowCameraScript.Instance.AdditionalTargets.Add(targetedGrapplePoint.transform);
         }
     }
 }

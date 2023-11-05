@@ -30,6 +30,11 @@ public class InputReader : MonoBehaviour
         {
             bucketPlayerInputProvider.InvokeOnJumpReleased();
         }
+
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            bucketPlayerInputProvider.InvokeSpecialAbility();
+        }
     }
 
     private void ReadRakePlayerInput()

@@ -15,7 +15,7 @@ MonoBehaviour:
   Config:
     GravityAccel: 22
     AirbornHAcceleration: 35
-    AirbornHFriction: 35
+    AirbornHFriction: 25
     MaxHAirbornSpeed: 6
     JumpVelocity: 9.25
     CoyoteTime: 0.15
@@ -33,6 +33,15 @@ MonoBehaviour:
     GroundRayCastDistance: 0.3
     GroundStickAccel: 20
     CanGrapple: 1
+    GrapplePullSpeed: 25
+    GrappleExitSpeed: 14
+    GrappleCooldown: 0.75
+    GrappleProjectileSpeed: 45
+    GrappleEndOffset: 4
+    GrappleRadius: 25
+    GrappleLayerMask:
+      serializedVersion: 2
+      m_Bits: 4096
     CanWallSlide: 0
     WallSlideCastSizeYReduction: 0.3
     WallSlideVel: 0

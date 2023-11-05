@@ -356,8 +356,8 @@ MonoBehaviour:
   virtualCamera: {fileID: 8090037682384117374}
   minOrthoWidth: 4
   minOrthoHeight: 3
-  widthMargin: 5
-  heightMargin: 5
+  widthMargin: 6
+  heightMargin: 6
   unitLerpFactor: 0.985
   lookaheadFactor: 0.25
   maxLookAhead: 5

@@ -18,7 +18,7 @@ TagManager:
   - Leaves
   - Rake
   - Bucket
-  - 
+  - GrapplePoint
   - 
   - 
   - 
@@ -42,6 +42,15 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: Interactable
+    uniqueID: 297098601
+    locked: 0
+  - name: Grapple
+    uniqueID: 1320421877
+    locked: 0
   - name: Player
     uniqueID: 704817825
+    locked: 0
+  - name: Indicators
+    uniqueID: 121564657
     locked: 0

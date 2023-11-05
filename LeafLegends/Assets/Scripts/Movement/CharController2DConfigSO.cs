@@ -43,6 +43,16 @@ public class CharController2DConfig
     [Header("Grappling"), SerializeField]
     public bool CanGrapple;
 
+    public float GrapplePullSpeed;
+    public float GrappleExitSpeed;
+    public float GrappleCooldown;
+    public float GrappleProjectileSpeed;
+
+    // How close we pull before ending the grapple
+    public float GrappleEndOffset;
+    public float GrappleRadius;
+    public LayerMask GrappleLayerMask;
+
     [Header("Wall Sliding"), SerializeField]
     public bool CanWallSlide;
 

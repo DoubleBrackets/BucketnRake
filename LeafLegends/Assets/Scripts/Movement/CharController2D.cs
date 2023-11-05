@@ -18,6 +18,8 @@ public class CharController2D : MonoBehaviour
         set => rb.velocity = value;
     }
 
+    public Rigidbody2D Rb => rb;
+
     public struct MoveInput
     {
         public float deltaTime;
@@ -31,6 +33,7 @@ public class CharController2D : MonoBehaviour
         public bool stableOnGround;
 
         public Vector2 groundNormal;
+        public Vector2 rayGroundNormal;
 
         public readonly float deltaTime;
 
@@ -118,6 +121,14 @@ public class CharController2D : MonoBehaviour
 
         // Transform velocity to "ground" tangent space
         Vector2 relativeVelocity = Quaternion.Euler(0, 0, -groundAngle) * transientVelocity;
+
+        // if airborne, moving over top speed, and input is in the same direction, then don't slow down
+        if (!currentStateContext.stableOnGround &&
+            Mathf.Abs(transientVelocity.x) > maxSpeed &&
+            Mathf.Sign(desiredHorizontalVelocity) == Mathf.Sign(transientVelocity.x))
+        {
+            finalAccel = 0f;
+        }
 
         relativeVelocity.x = Mathf.MoveTowards(
             relativeVelocity.x,
@@ -221,6 +232,15 @@ public class CharController2D : MonoBehaviour
         else
         {
             evalMoveContext.stableOnGround = false;
+        }
+
+        if (evalMoveContext.groundRaycastHit)
+        {
+            evalMoveContext.rayGroundNormal = currentStateContext.groundRaycastHit.normal;
+        }
+        else
+        {
+            evalMoveContext.rayGroundNormal = Vector2.up;
         }
     }
 

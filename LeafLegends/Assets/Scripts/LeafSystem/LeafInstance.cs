@@ -107,7 +107,7 @@ public class LeafInstance : MonoBehaviour
     public bool TryCollectWithBucket()
     {
         // can't collect leaves on the ground
-        if (rb.GetContacts(new ContactPoint2D[1]) > 0)
+        if (rb.GetContacts(new ContactPoint2D[1]) > 0 || !raked)
         {
             return false;
         }

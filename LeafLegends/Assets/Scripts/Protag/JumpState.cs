@@ -14,11 +14,13 @@ public partial class ProtagController : MonoBehaviour
         DoJump();
         jumpTimer = ControllerConfig.JumpDuration;
         inputProvider.OnJumpReleased += ExitJumpEarly;
+        inputProvider.OnSpecialAbilityPressed += TryGrapplingSwitch;
     }
 
     public void ExitJumpState()
     {
         inputProvider.OnJumpReleased -= ExitJumpEarly;
+        inputProvider.OnSpecialAbilityPressed -= TryGrapplingSwitch;
     }
 
     private void ExitJumpEarly()

@@ -49,6 +49,8 @@ MonoBehaviour:
   controllerConfigSO: {fileID: 0}
   charController: {fileID: 544064097357453574}
   rakeAbility: {fileID: 0}
+  grappleVisuals: {fileID: 0}
+  rotatedBody: {fileID: 5859035914380881668}
 --- !u!114 &544064097357453574
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -88,12 +90,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3973606055230161357}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 1, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 184179629182842986}
+  m_Father: {fileID: 5859035914380881668}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &2780942576265794111
 SpriteRenderer:
@@ -246,7 +248,7 @@ Transform:
   m_Children:
   - {fileID: 2937989010800867236}
   - {fileID: 780256569792365164}
-  - {fileID: 3947786282758850083}
+  - {fileID: 5859035914380881668}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!50 &677416874442755936
@@ -276,3 +278,35 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 1
   m_Constraints: 4
+--- !u!1 &7424896296631893661
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5859035914380881668}
+  m_Layer: 7
+  m_Name: RotatedBody
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5859035914380881668
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7424896296631893661}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: -1, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 3947786282758850083}
+  m_Father: {fileID: 184179629182842986}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

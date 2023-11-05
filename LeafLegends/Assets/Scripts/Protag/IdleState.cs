@@ -11,11 +11,13 @@ public partial class ProtagController : MonoBehaviour
     {
         ResetJumpVelocity();
         inputProvider.OnJumpPressed += TrySwitchToJumpState;
+        inputProvider.OnSpecialAbilityPressed += TryGrapplingSwitch;
     }
 
     public void ExitIdleState()
     {
         inputProvider.OnJumpPressed -= TrySwitchToJumpState;
+        inputProvider.OnSpecialAbilityPressed -= TryGrapplingSwitch;
     }
 
     public void UpdateIdleState()

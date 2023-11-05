@@ -14,11 +14,11 @@
             "scaleInEditor": 1
         },
         "testingTilemap.tmx": {
-            "scale": 4,
+            "scale": 1.5,
             "selectedLayer": 1,
             "viewCenter": {
-                "x": 324.125,
-                "y": -56.375
+                "x": 186.33333333333331,
+                "y": -169
             }
         }
     },

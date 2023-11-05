@@ -9,6 +9,7 @@ public class InputProviderSO : ScriptableObject
 {
     public event Action OnJumpPressed;
     public event Action OnJumpReleased;
+    public event Action OnSpecialAbilityPressed;
 
     [ShowInInspector]
     public float HorizontalAxis { get; set; }
@@ -24,5 +25,10 @@ public class InputProviderSO : ScriptableObject
     public void InvokeOnJumpReleased()
     {
         OnJumpReleased?.Invoke();
+    }
+
+    public void InvokeSpecialAbility()
+    {
+        OnSpecialAbilityPressed?.Invoke();
     }
 }

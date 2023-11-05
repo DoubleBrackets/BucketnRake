@@ -9,11 +9,13 @@ public partial class ProtagController : MonoBehaviour
     {
         // in case of coyote time
         inputProvider.OnJumpPressed += TrySwitchToJumpState;
+        inputProvider.OnSpecialAbilityPressed += TryGrapplingSwitch;
     }
 
     public void ExitAirborneState()
     {
         inputProvider.OnJumpPressed -= TrySwitchToJumpState;
+        inputProvider.OnSpecialAbilityPressed -= TryGrapplingSwitch;
     }
 
     public void UpdateAirborneState()
