@@ -37,6 +37,6 @@ public partial class ProtagController : MonoBehaviour
     private void DefaultGroundedMovement()
     {
         charController.HorizontalMovement(ControllerConfig, currentMoveInput);
-        charController.SnapToGround(ControllerConfig);
+        charController.SnapToGround(ControllerConfig, currentMoveInput);
     }
 }

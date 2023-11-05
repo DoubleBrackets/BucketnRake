@@ -211,7 +211,6 @@ public class CharController2D : MonoBehaviour
 
         // Check if ground is stable
         evalMoveContext.groundNormal = hit.normal;
-        Debug.Log($"{hit.normal}");
         var groundSlopeAngle = Vector2.Angle(hit.normal, Vector2.up);
 
         if (groundSlopeAngle <= config.StableOnGroundAngle)
@@ -221,12 +220,11 @@ public class CharController2D : MonoBehaviour
         }
         else
         {
-            evalMoveContext.groundNormal = Vector2.up;
             evalMoveContext.stableOnGround = false;
         }
     }
 
-    public void SnapToGround(in CharController2DConfig config)
+    public void SnapToGround(in CharController2DConfig config, in MoveInput moveInput)
     {
         var transientVelocity = rb.velocity;
 
@@ -235,7 +233,9 @@ public class CharController2D : MonoBehaviour
         // Also assumes a ledge if the raycast doesn't hit anything
         var changeAngle = Vector2.Angle(currentStateContext.groundRaycastHit.normal, currentStateContext.groundRaycastHit.normal);
         var movingAwayFromSlope = Vector2.Dot(transientVelocity, currentStateContext.groundRaycastHit.normal) >= 0;
-        if ((currentStateContext.groundRaycastHit.collider == null || changeAngle > config.LedgeSnapAngle) && movingAwayFromSlope)
+        if ((currentStateContext.groundRaycastHit.collider == null || changeAngle > config.LedgeSnapAngle) &&
+            movingAwayFromSlope &&
+            moveInput.horizontalInput != 0f)
         {
             ForceAirborne(0.1f);
             return;

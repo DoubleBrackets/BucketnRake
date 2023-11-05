@@ -70,7 +70,9 @@ public partial class ProtagController : MonoBehaviour
         charController.Velocity = Quaternion.Euler(0, 0, groundAngle) * relativeVelocity;
 
         // Sliding should snap to ground
-        charController.SnapToGround(ControllerConfig);
+        var moveInput = currentMoveInput;
+        moveInput.horizontalInput = Mathf.Sign(relativeVelocity.x);
+        charController.SnapToGround(ControllerConfig, moveInput);
     }
 
     private bool CanExitCrouch()
@@ -84,7 +86,6 @@ public partial class ProtagController : MonoBehaviour
 
         if (colliders.Length > 0)
         {
-            Debug.LogError("Rip");
             return false;
         }
 
