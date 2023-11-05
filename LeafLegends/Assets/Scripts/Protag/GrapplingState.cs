@@ -45,6 +45,7 @@ public partial class ProtagController : MonoBehaviour
             grappleStartPos = pointBeingGrappled.rb.transform.position;
             grappleVector = -grappleVector;
             pointBeingGrappled.rb.bodyType = RigidbodyType2D.Static;
+            pointBeingGrappled.controller.ForceAirborne(0.2f);
         }
         else
         {
@@ -83,11 +84,13 @@ public partial class ProtagController : MonoBehaviour
 
     private async UniTaskVoid DoGrapple()
     {
+        AudioManager.Instance.PlaySFX(SFX.GrappleThrow, transform.position);
         var totalDist = grappleVector.magnitude + ControllerConfig.GrappleEndOffset;
         await grappleVisuals.WindupAnimation(pointBeingGrappled, totalDist / ControllerConfig.GrappleProjectileSpeed);
 
         grappleVisuals.LinkPoint(pointBeingGrappled);
         // Pulling stage
+        AudioManager.Instance.PlaySFX(SFX.GrapplePull, transform.position);
         var grapplePullTimer = 0f;
         while (grapplePullTimer < grapplePullDuration)
         {

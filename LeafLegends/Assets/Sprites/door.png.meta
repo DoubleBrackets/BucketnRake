@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: aa31aff3f76e30d40ba6b0efb2a0c5d4
+guid: d7c9a1098e78dea40b0eced43b687718
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -123,13 +123,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: lever_0
+      name: door_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
         width: 32
-        height: 32
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -137,20 +137,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 744faf1360614f44bbebad9b00d0bb69
-      internalID: 629432666
+      spriteID: f24f4dfa717ae0646b4d1c51a0ad8fe0
+      internalID: 713073824
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: lever_1
+      name: door_1
       rect:
         serializedVersion: 2
         x: 32
         y: 0
         width: 32
-        height: 32
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -158,8 +158,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8ce71ed5e325fd34698d214abfa7a0ed
-      internalID: 1928685587
+      spriteID: e2cbe81345f6d1f41bd124bb1514ac3c
+      internalID: -922865026
       vertices: []
       indices: 
       edges: []
@@ -175,8 +175,8 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      lever_0: 629432666
-      lever_1: 1928685587
+      door_0: 713073824
+      door_1: -922865026
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

@@ -116,8 +116,8 @@ Transform:
   m_GameObject: {fileID: 6513490318904707502}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 2, y: 2, z: 2}
+  m_LocalPosition: {x: 0, y: 0.388, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1470004472622614834}
@@ -163,8 +163,8 @@ SpriteRenderer:
   m_SortingLayerID: 121564657
   m_SortingLayer: 5
   m_SortingOrder: 5
-  m_Sprite: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
-  m_Color: {r: 0, g: 0.9820981, b: 1, a: 1}
+  m_Sprite: {fileID: 21300000, guid: 12c4417fb2c95004dbed42cca274bdc4, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -222,6 +222,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isPullGrapple: 1
   rb: {fileID: 5096668735390330743}
+  controller: {fileID: 5211031255118477585}
   spriteRenderer: {fileID: 5768748128673678399}
 --- !u!58 &2451349430552018403
 CircleCollider2D:
@@ -370,6 +371,10 @@ PrefabInstance:
       propertyPath: groundCastSizeReduction
       value: 0.1
       objectReference: {fileID: 0}
+    - target: {fileID: 5859035914380881668, guid: 9b323173154aa8043940420061deb371, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8751264601412483865, guid: 9b323173154aa8043940420061deb371, type: 3}
       propertyPath: m_Controller
       value: 
@@ -395,6 +400,17 @@ Rigidbody2D:
   m_CorrespondingSourceObject: {fileID: 677416874442755936, guid: 9b323173154aa8043940420061deb371, type: 3}
   m_PrefabInstance: {fileID: 5754943059578298391}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &5211031255118477585 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 544064097357453574, guid: 9b323173154aa8043940420061deb371, type: 3}
+  m_PrefabInstance: {fileID: 5754943059578298391}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aad0ea3089477cd41b7438b7c90ddbf0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!70 &5964510706452784260 stripped
 CapsuleCollider2D:
   m_CorrespondingSourceObject: {fileID: 2097438114042758291, guid: 9b323173154aa8043940420061deb371, type: 3}

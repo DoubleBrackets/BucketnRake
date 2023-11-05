@@ -17,6 +17,7 @@ public class GenericLever : MonoBehaviour
         {
             pulled = true;
             OnLeverPulled?.Invoke();
+            AudioManager.Instance.PlaySFX(SFX.Lever, transform.position);
             Animator.Play();
         }
     }

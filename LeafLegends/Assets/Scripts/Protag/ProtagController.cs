@@ -56,8 +56,10 @@ public partial class ProtagController : MonoBehaviour
 
     private void OnDrawGizmos()
     {
+        #if UNITY_EDITOR
         Handles.color = Color.yellow;
         Handles.Label(transform.position + Vector3.up * 2f, currentState.ToString());
+        #endif
     }
 
     private bool SwitchStates(ProtagStates newState)

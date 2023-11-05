@@ -8,6 +8,7 @@ public abstract class GrapplePoint : MonoBehaviour
 {
     public bool isPullGrapple;
     public Rigidbody2D rb;
+    public CharController2D controller;
 
     private void Awake()
     {

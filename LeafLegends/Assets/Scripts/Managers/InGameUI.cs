@@ -29,6 +29,6 @@ public class InGameUI : MonoBehaviour
     private void UpdateLeavesProgress(int currentLeaves, int totalLeaves)
     {
         progressBar.value = (float)currentLeaves / totalLeaves;
-        progressText.text = $"<b>{(float)currentLeaves / totalLeaves * 100:N0}%</b> Of Leaves Cleaned";
+        progressText.text = $"<b>{(float)currentLeaves / totalLeaves * 100:N0}%</b> Cleaned!";
     }
 }

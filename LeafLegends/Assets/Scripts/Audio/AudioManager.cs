@@ -12,7 +12,12 @@ public enum SFX
     Jump,
     Land,
     Rake,
-    WallSlideStartup
+    WallSlideStartup,
+    Lever,
+    GrappleThrow,
+    GrapplePull,
+    DoorOpen,
+    VictoryJingle
 }
 
 public class AudioManager : MonoBehaviour
@@ -27,8 +32,8 @@ public class AudioManager : MonoBehaviour
 
     [SerializeField]
     private SFXEntry[] sfxClips;
-
-    [Serializable]
+    
+    [System.Serializable]
     private struct SFXEntry
     {
         public SFX type;

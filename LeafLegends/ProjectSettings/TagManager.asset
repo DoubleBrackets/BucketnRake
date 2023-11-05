@@ -57,3 +57,6 @@ TagManager:
   - name: Indicators
     uniqueID: 121564657
     locked: 0
+  - name: VFX
+    uniqueID: 1073232453
+    locked: 0
