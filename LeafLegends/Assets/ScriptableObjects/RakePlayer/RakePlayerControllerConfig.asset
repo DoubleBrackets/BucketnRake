@@ -13,20 +13,35 @@ MonoBehaviour:
   m_Name: RakePlayerControllerConfig
   m_EditorClassIdentifier: 
   Config:
-    GravityAccel: 16
+    GravityAccel: 22
     AirbornHAcceleration: 35
-    AirbornHFriction: 5
-    MaxHAirbornSpeed: 5.5
-    JumpVelocity: 6
-    GroundedHAcceleration: 35
-    GroundedHFriction: 25
-    MaxGroundedHSpeed: 5
+    AirbornHFriction: 35
+    MaxHAirbornSpeed: 6
+    JumpVelocity: 9.25
+    CoyoteTime: 0.15
+    JumpDuration: 0.5
+    GroundedHAcceleration: 75
+    GroundedHFriction: 50
+    MaxGroundedHSpeed: 5.5
     GroundLayerMask:
       serializedVersion: 2
       m_Bits: 64
     LedgeSnapAngle: 45
-    StableOnGroundAngle: 45
+    StableOnGroundAngle: 85
     GroundCastSizeReduction: 0.025
-    GroundCapsuleCastDistance: 0.2
-    GroundRayCastDistance: 0.35
-    GroundStickAccel: 16
+    GroundCapsuleCastDistance: 0.3
+    GroundRayCastDistance: 0.3
+    GroundStickAccel: 20
+    CanGrapple: 0
+    CanWallSlide: 1
+    WallSlideCastSizeYReduction: 0.3
+    WallSlideVel: -3
+    WallJumpVel: 11
+    WallSlideMask:
+      serializedVersion: 2
+      m_Bits: 64
+    CanSlide: 1
+    SlideHeightReduction: 1.01
+    SlideMinVelocity: 3
+    SlideFriction: 0
+    SlideGravityAccel: 22

@@ -6,12 +6,12 @@ public class InputReader : MonoBehaviour
 {
     [SerializeField]
     private InputProviderSO rakePlayerInputProvider;
-    
+
     [SerializeField]
     private InputProviderSO bucketPlayerInputProvider;
-    
+
     // Update is called once per frame
-    void Update()
+    private void Update()
     {
         ReadRakePlayerInput();
         ReadBucketPlayerInput();
@@ -20,18 +20,31 @@ public class InputReader : MonoBehaviour
     private void ReadBucketPlayerInput()
     {
         bucketPlayerInputProvider.HorizontalAxis = (Input.GetKey(KeyCode.A) ? -1 : 0) + (Input.GetKey(KeyCode.D) ? 1 : 0);
-        if (Input.GetKeyDown(KeyCode.Space))
+        bucketPlayerInputProvider.VerticalAxis = (Input.GetKey(KeyCode.S) ? -1 : 0) + (Input.GetKey(KeyCode.W) ? 1 : 0);
+        if (Input.GetKeyDown(KeyCode.W))
         {
             bucketPlayerInputProvider.InvokeOnJumpPressed();
+        }
+
+        if (Input.GetKeyUp(KeyCode.W))
+        {
+            bucketPlayerInputProvider.InvokeOnJumpReleased();
         }
     }
 
     private void ReadRakePlayerInput()
     {
         rakePlayerInputProvider.HorizontalAxis = (Input.GetKey(KeyCode.LeftArrow) ? -1 : 0) + (Input.GetKey(KeyCode.RightArrow) ? 1 : 0);
+        rakePlayerInputProvider.VerticalAxis = (Input.GetKey(KeyCode.DownArrow) ? -1 : 0) + (Input.GetKey(KeyCode.UpArrow) ? 1 : 0);
+
         if (Input.GetKeyDown(KeyCode.UpArrow))
         {
             rakePlayerInputProvider.InvokeOnJumpPressed();
+        }
+
+        if (Input.GetKeyUp(KeyCode.UpArrow))
+        {
+            rakePlayerInputProvider.InvokeOnJumpReleased();
         }
     }
 }

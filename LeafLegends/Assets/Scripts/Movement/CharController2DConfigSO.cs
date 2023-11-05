@@ -12,29 +12,50 @@ public class CharController2DConfigSO : ScriptableObject
 [System.Serializable]
 public class CharController2DConfig
 {
-    [Header("Airborne Config")]
-    [SerializeField] public float GravityAccel;
+    [Header("Airborne Config"), SerializeField]
+    public float GravityAccel;
 
     [SerializeField] public float AirbornHAcceleration;
     [SerializeField] public float AirbornHFriction;
     [SerializeField] public float MaxHAirbornSpeed;
     [SerializeField] public float JumpVelocity;
+    [SerializeField] public float CoyoteTime;
+    [SerializeField] public float JumpDuration;
 
 
-    [Header("Grounded Config")]
-    [SerializeField] public float GroundedHAcceleration;
+    [Header("Grounded Config"), SerializeField]
+    public float GroundedHAcceleration;
 
     [SerializeField] public float GroundedHFriction;
     [SerializeField] public float MaxGroundedHSpeed;
 
 
-    [Header("Ground Check Config")]
+    [Header("Ground Check Config"), SerializeField]
+    public LayerMask GroundLayerMask;
 
-    [SerializeField] public LayerMask GroundLayerMask;
     [SerializeField] public float LedgeSnapAngle = 45f;
     [SerializeField] public float StableOnGroundAngle = 45f;
     [SerializeField] public float GroundCastSizeReduction = 0.025f;
-    [SerializeField] public float GroundCapsuleCastDistance  = 0.1f;
-    [SerializeField] public float GroundRayCastDistance  = 0.25f;
+    [SerializeField] public float GroundCapsuleCastDistance = 0.1f;
+    [SerializeField] public float GroundRayCastDistance = 0.25f;
     [SerializeField] public float GroundStickAccel;
+
+    [Header("Grappling"), SerializeField]
+    public bool CanGrapple;
+
+    [Header("Wall Sliding"), SerializeField]
+    public bool CanWallSlide;
+
+    [SerializeField] public float WallSlideCastSizeYReduction;
+    [SerializeField] public float WallSlideVel;
+    [SerializeField] public float WallJumpVel;
+    [SerializeField] public LayerMask WallSlideMask;
+
+    [Header("Crouching"), SerializeField]
+    public bool CanSlide;
+
+    public float SlideHeightReduction;
+    public float SlideMinVelocity;
+    public float SlideFriction;
+    public float SlideGravityAccel;
 }

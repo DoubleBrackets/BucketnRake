@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using Sirenix.OdinInspector;
 using UnityEngine;
+using UnityEngine.Rendering;
 
 public class CharController2D : MonoBehaviour
 {
@@ -28,118 +29,129 @@ public class CharController2D : MonoBehaviour
     {
         public bool touchingGround;
         public bool stableOnGround;
-        
+
         public Vector2 groundNormal;
 
         public readonly float deltaTime;
-        
+
         // Ground cast using the capsule collider
         public RaycastHit2D groundCapsuleCastHit;
-        
+
         // Ground cast using a raycast from the center for ground snap testing
         // This is to prevent snapping to sharp edges
         public RaycastHit2D groundRaycastHit;
 
-        public Vector2 transientVelocity;
-
-        public StateContext(float deltaTime) : this()
-        {
-            this.deltaTime = deltaTime;
-        }
+        public StateContext(float deltaTime) : this() => this.deltaTime = deltaTime;
     }
 
     [ShowInInspector]
     private StateContext currentStateContext;
 
-    public StateContext CurrentStateContext => currentStateContext;
+    private StateContext prevStateContext;
 
-    public float ForceAirborneTime
-    {
-        get => forceAirborneTime;
-        set => forceAirborneTime = value;
-    }
+    public StateContext CurrentStateContext => currentStateContext;
+    public StateContext PrevStateContext => prevStateContext;
+
 
     private float forceAirborneTime;
+    public float GravityScale { get; set; } = 1f;
+    public float CoyoteTime { get; set; }
 
-    public void UpdateCharacterController(CharController2DConfig config, MoveInput moveInput)
+    public void ForceAirborne(float time)
     {
-        ForceAirborneTime -= moveInput.deltaTime;
-        
+        currentStateContext.stableOnGround = false;
+        forceAirborneTime = time;
+    }
+
+    public void OffsetCapsuleHeight(float heightChange)
+    {
+        var colliderSize = collider.size;
+        colliderSize.y += heightChange;
+        collider.size = colliderSize;
+
+        collider.offset = new Vector2(collider.offset.x, collider.offset.y + heightChange / 2);
+    }
+
+    public void UpdateControllerState(CharController2DConfig config, MoveInput moveInput)
+    {
+        forceAirborneTime -= moveInput.deltaTime;
+        CoyoteTime += moveInput.deltaTime;
+
         // Set up context
-        StateContext evalMoveContext = new StateContext(moveInput.deltaTime);
-        evalMoveContext.transientVelocity = rb.velocity;
-        
+        var evalMoveContext = new StateContext(moveInput.deltaTime);
+
         // Calculate context for the physics tick
         GroundCast(config, ref evalMoveContext);
         EvaluateGroundState(config, ref evalMoveContext);
-        
-        HorizontalMovement(config, moveInput, ref evalMoveContext);
-        VerticalMovement(config, ref evalMoveContext);
 
-        // Apply context back to rb
-        rb.velocity = evalMoveContext.transientVelocity;
+        // Update state
+        prevStateContext = currentStateContext;
         currentStateContext = evalMoveContext;
     }
 
-    private void HorizontalMovement(in CharController2DConfig config, in MoveInput moveInput, ref StateContext stateContext)
+    public void HorizontalMovement(in CharController2DConfig config, in MoveInput moveInput)
     {
-        // Calculate desired velocity and acceleration
-        float maxSpeed = stateContext.stableOnGround ? config.MaxGroundedHSpeed : config.MaxHAirbornSpeed;
-        float desiredHorizontalVelocity = moveInput.horizontalInput * maxSpeed;
-        
-        float activeAccel = stateContext.stableOnGround ? config.GroundedHAcceleration : config.AirbornHAcceleration;
-        float frictionAccel = stateContext.stableOnGround ? config.GroundedHFriction : config.AirbornHFriction;
+        var transientVelocity = rb.velocity;
 
-        float finalAccel = activeAccel;
+        // Calculate desired velocity and acceleration
+        var maxSpeed = currentStateContext.stableOnGround ? config.MaxGroundedHSpeed : config.MaxHAirbornSpeed;
+        var desiredHorizontalVelocity = moveInput.horizontalInput * maxSpeed;
+
+        var activeAccel = currentStateContext.stableOnGround ? config.GroundedHAcceleration : config.AirbornHAcceleration;
+        var frictionAccel = currentStateContext.stableOnGround ? config.GroundedHFriction : config.AirbornHFriction;
+
+        var finalAccel = activeAccel;
         // If trying to stand still, use friction
-        if(Mathf.Abs(desiredHorizontalVelocity) == 0)
+        if (Mathf.Abs(desiredHorizontalVelocity) == 0)
         {
             finalAccel = frictionAccel;
         }
-        
-        // If moving in opposite direction, then take the largest between friction and acceleration
-        if (desiredHorizontalVelocity * stateContext.transientVelocity.x < 0)
+
+        // If moving in opposite direction or trying to slow down, then use friction
+        if (desiredHorizontalVelocity * transientVelocity.x < 0)
         {
-            finalAccel = Mathf.Max(activeAccel, frictionAccel);
+            finalAccel = Mathf.Max(frictionAccel, activeAccel);
         }
-        
+
         // Calculate new velocity
-        float groundAngle = Vector2.Angle(stateContext.groundNormal, Vector2.up);
+        var groundAngle = Vector2.SignedAngle(Vector2.up, currentStateContext.groundNormal);
 
         // Transform velocity to "ground" tangent space
-        Vector2 relativeVelocity = Quaternion.Euler(0, 0, -groundAngle) * stateContext.transientVelocity;
+        Vector2 relativeVelocity = Quaternion.Euler(0, 0, -groundAngle) * transientVelocity;
 
         relativeVelocity.x = Mathf.MoveTowards(
             relativeVelocity.x,
             desiredHorizontalVelocity,
-            finalAccel * stateContext.deltaTime);
-        
+            finalAccel * currentStateContext.deltaTime);
+
         // Transform velocity back to world space and apply
-        stateContext.transientVelocity = Quaternion.Euler(0, 0, groundAngle) * relativeVelocity;
+        transientVelocity = Quaternion.Euler(0, 0, groundAngle) * relativeVelocity;
+
+        rb.velocity = transientVelocity;
     }
-    
-    private void VerticalMovement(in CharController2DConfig config, ref StateContext stateContext)
+
+    public void AirbornePhysics(in CharController2DConfig config)
     {
+        var transientVelocity = rb.velocity;
+
         // Only apply gravity if unstable
-        if (!stateContext.stableOnGround)
+        if (!currentStateContext.stableOnGround)
         {
-            stateContext.transientVelocity.y -= config.GravityAccel * stateContext.deltaTime;
+            transientVelocity.y -= config.GravityAccel * currentStateContext.deltaTime * GravityScale;
         }
+
+        rb.velocity = transientVelocity;
     }
 
     private void GroundCast(in CharController2DConfig config, ref StateContext evalMoveContext)
     {
-        var size = collider.size;
-        size.y -= config.GroundCastSizeReduction;
-        
-        evalMoveContext.groundCapsuleCastHit = Physics2D.CapsuleCast(
-            collider.bounds.center, 
-            size, 
-            CapsuleDirection2D.Vertical, 
-            0, 
-            Vector2.down, 
+        evalMoveContext.groundCapsuleCastHit = CastCapsule(
+            0,
+            config.GroundCastSizeReduction,
+            Vector2.down,
             config.GroundCapsuleCastDistance + config.GroundCastSizeReduction / 2,
-            config.GroundLayerMask);
+            config.GroundLayerMask
+        );
 
         evalMoveContext.groundRaycastHit = Physics2D.Raycast(
             collider.bounds.center,
@@ -149,55 +161,95 @@ public class CharController2D : MonoBehaviour
         );
     }
 
+    public RaycastHit2D CastCapsule(
+        float xReduction,
+        float yReduction,
+        Vector2 direction,
+        float distance,
+        LayerMask mask)
+    {
+        var size = collider.size;
+        size.y -= yReduction;
+        size.x -= xReduction;
+        return Physics2D.CapsuleCast(
+            collider.bounds.center,
+            size,
+            CapsuleDirection2D.Vertical,
+            0,
+            direction,
+            distance,
+            mask);
+    }
+
+    public Collider2D[] OverlapCapsule(Vector2 offset, float xReduction, float yReduction, LayerMask mask)
+    {
+        var size = collider.size;
+        size.y -= yReduction;
+        size.x -= xReduction;
+
+        return Physics2D.OverlapCapsuleAll(
+            collider.bounds.center + (Vector3)offset,
+            size,
+            CapsuleDirection2D.Vertical,
+            0f,
+            mask);
+    }
+
     private void EvaluateGroundState(in CharController2DConfig config, ref StateContext evalMoveContext)
     {
         var hit = evalMoveContext.groundCapsuleCastHit;
         // Check if ground is present
-        if (hit.collider == null || ForceAirborneTime > 0)
+        if (hit.collider == null || forceAirborneTime > 0)
         {
             evalMoveContext.touchingGround = false;
             evalMoveContext.stableOnGround = false;
             evalMoveContext.groundNormal = Vector2.up;
             return;
         }
+
         evalMoveContext.touchingGround = true;
-        
+
         // Check if ground is stable
         evalMoveContext.groundNormal = hit.normal;
-        float groundSlopeAngle = Vector2.Angle(hit.normal, Vector2.up);
-        
-        if(groundSlopeAngle <= config.StableOnGroundAngle)
+        Debug.Log($"{hit.normal}");
+        var groundSlopeAngle = Vector2.Angle(hit.normal, Vector2.up);
+
+        if (groundSlopeAngle <= config.StableOnGroundAngle)
         {
             evalMoveContext.stableOnGround = true;
-            SnapToGround(config, ref evalMoveContext);
+            CoyoteTime = 0f;
         }
         else
         {
+            evalMoveContext.groundNormal = Vector2.up;
             evalMoveContext.stableOnGround = false;
         }
     }
 
-    private void SnapToGround(in CharController2DConfig config, ref StateContext evalMoveContext)
+    public void SnapToGround(in CharController2DConfig config)
     {
+        var transientVelocity = rb.velocity;
+
         // If the change in ground angle is too steep and we're moving towards a ledge, then don't snap and force airborne
         // Basically launching over a ledge
         // Also assumes a ledge if the raycast doesn't hit anything
-        float changeAngle = Vector2.Angle(evalMoveContext.groundRaycastHit.normal, currentStateContext.groundRaycastHit.normal);
-        bool movingAwayFromSlope = Vector2.Dot(evalMoveContext.transientVelocity, evalMoveContext.groundRaycastHit.normal) > 0;
-        if(evalMoveContext.groundRaycastHit.collider == null || changeAngle > config.LedgeSnapAngle && movingAwayFromSlope)
+        var changeAngle = Vector2.Angle(currentStateContext.groundRaycastHit.normal, currentStateContext.groundRaycastHit.normal);
+        var movingAwayFromSlope = Vector2.Dot(transientVelocity, currentStateContext.groundRaycastHit.normal) >= 0;
+        if ((currentStateContext.groundRaycastHit.collider == null || changeAngle > config.LedgeSnapAngle) && movingAwayFromSlope)
         {
-            ForceAirborneTime = 0.1f;
+            ForceAirborne(0.1f);
             return;
         }
-        
-        // If we're moving away from the ground, then remove all relative vertical velocity 
-        if (Vector2.Dot(evalMoveContext.groundNormal, evalMoveContext.transientVelocity) > 0)
-        {
-            evalMoveContext.transientVelocity = Vector3.ProjectOnPlane(evalMoveContext.transientVelocity, evalMoveContext.groundNormal);
-        }
-        
-        // Stick to ground with some force
-        evalMoveContext.transientVelocity -= evalMoveContext.groundNormal * (config.GroundStickAccel * evalMoveContext.deltaTime);
-    }
 
+        // If we're moving away from the ground, then remove all relative vertical velocity 
+        if (Vector2.Dot(currentStateContext.groundNormal, transientVelocity) > 0)
+        {
+            transientVelocity = Vector3.ProjectOnPlane(transientVelocity, currentStateContext.groundNormal);
+        }
+
+        // Stick to ground with some force
+        transientVelocity -= currentStateContext.groundNormal * (config.GroundStickAccel * currentStateContext.deltaTime);
+
+        rb.velocity = transientVelocity;
+    }
 }
