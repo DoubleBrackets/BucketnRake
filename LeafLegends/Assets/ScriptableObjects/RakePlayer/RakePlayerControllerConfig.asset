@@ -44,7 +44,7 @@ MonoBehaviour:
       m_Bits: 0
     CanWallSlide: 1
     WallSlideCastSizeYReduction: 0.3
-    WallSlideVel: -2.5
+    WallSlideVel: -3.5
     WallJumpVel: 12
     WallSlideMask:
       serializedVersion: 2

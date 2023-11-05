@@ -33,12 +33,12 @@ MonoBehaviour:
     GroundRayCastDistance: 0.3
     GroundStickAccel: 20
     CanGrapple: 1
-    GrapplePullSpeed: 25
-    GrappleExitSpeed: 14
+    GrapplePullSpeed: 30
+    GrappleExitSpeed: 15
     GrappleCooldown: 0.75
-    GrappleProjectileSpeed: 45
+    GrappleProjectileSpeed: 35
     GrappleEndOffset: 4
-    GrappleRadius: 25
+    GrappleRadius: 20
     GrappleLayerMask:
       serializedVersion: 2
       m_Bits: 4096

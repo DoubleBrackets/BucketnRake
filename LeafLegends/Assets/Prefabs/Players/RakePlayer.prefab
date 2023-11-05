@@ -310,22 +310,6 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 7
       objectReference: {fileID: 0}
-    - target: {fileID: 2097438114042758291, guid: 9b323173154aa8043940420061deb371, type: 3}
-      propertyPath: m_Size.x
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 2097438114042758291, guid: 9b323173154aa8043940420061deb371, type: 3}
-      propertyPath: m_Size.y
-      value: 1.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 2097438114042758291, guid: 9b323173154aa8043940420061deb371, type: 3}
-      propertyPath: m_Offset.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3947786282758850083, guid: 9b323173154aa8043940420061deb371, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0.766
-      objectReference: {fileID: 0}
     - target: {fileID: 3973606055230161357, guid: 9b323173154aa8043940420061deb371, type: 3}
       propertyPath: m_Layer
       value: 7
@@ -385,10 +369,6 @@ PrefabInstance:
     - target: {fileID: 5698999216106409429, guid: 9b323173154aa8043940420061deb371, type: 3}
       propertyPath: groundCastSizeReduction
       value: 0.1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5859035914380881668, guid: 9b323173154aa8043940420061deb371, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -0.774
       objectReference: {fileID: 0}
     - target: {fileID: 8751264601412483865, guid: 9b323173154aa8043940420061deb371, type: 3}
       propertyPath: m_Controller
