@@ -84,8 +84,6 @@ public class GrappleVisuals : MonoBehaviour
 
         while (timer < duration)
         {
-            await UniTask.Yield(PlayerLoopTiming.Update);
-            timer += Time.deltaTime;
             var t = timer / duration;
             // Spend half the time midair and half the time tightening
             var vec = grappleVector.normalized * (dist * Mathf.Min(1f, t * 1 / grappleFlightRatio));
@@ -113,6 +111,8 @@ public class GrappleVisuals : MonoBehaviour
                     Vector2.SignedAngle(
                         Vector2.right,
                         deriv));
+            await UniTask.Yield(PlayerLoopTiming.Update);
+            timer += Time.deltaTime;
         }
 
         grappleProjectile.SetActive(false);
