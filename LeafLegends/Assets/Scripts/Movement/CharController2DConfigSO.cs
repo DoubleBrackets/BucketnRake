@@ -66,6 +66,9 @@ public class CharController2DConfig
 
     public float SlideHeightReduction;
     public float SlideMinVelocity;
+    public float SlideEnterMinVelocity;
     public float SlideFriction;
     public float SlideGravityAccel;
+    public float SlideStaticCooldown;
+    public float SlideInitialSpeedBoostRatio;
 }

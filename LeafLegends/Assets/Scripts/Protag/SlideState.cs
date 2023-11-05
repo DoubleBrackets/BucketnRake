@@ -6,18 +6,26 @@ public partial class ProtagController : MonoBehaviour
 {
     private bool canExitCrouch;
 
+    private float slideCooldownTimer;
+
     // Crouch State
     public void EnterCrouchState()
     {
         inputProvider.OnJumpPressed += TryJumpFromCrouch;
 
         charController.OffsetCapsuleHeight(-ControllerConfig.SlideHeightReduction);
+
+        Rb.velocity *= ControllerConfig.SlideInitialSpeedBoostRatio;
+
+        AudioManager.Instance.PlaySFX(SFX.GroundSlideStartup, transform.position);
         animator.Play("Sliding");
     }
 
     public void ExitCrouchState()
     {
         inputProvider.OnJumpPressed -= TryJumpFromCrouch;
+
+        slideCooldownTimer = ControllerConfig.SlideStaticCooldown;
 
         charController.OffsetCapsuleHeight(ControllerConfig.SlideHeightReduction);
     }
@@ -32,7 +40,9 @@ public partial class ProtagController : MonoBehaviour
         }
 
         // Let go of crouch
-        if (inputProvider.VerticalAxis >= 0f && canExitCrouch)
+        var letGo = inputProvider.VerticalAxis >= 0f;
+        var tooSlow = Rb.velocity.magnitude < ControllerConfig.SlideEnterMinVelocity / 2f;
+        if ((letGo || tooSlow) && canExitCrouch)
         {
             if (TryGroundSwitch())
             {
@@ -68,7 +78,11 @@ public partial class ProtagController : MonoBehaviour
         // Gravity
         relativeVelocity += (Vector2)(Quaternion.Euler(0, 0, -groundAngle) * Vector2.down) * (Time.fixedDeltaTime * ControllerConfig.SlideGravityAccel);
 
+        // Friction
+        relativeVelocity.x = Mathf.MoveTowards(relativeVelocity.x, 0f, ControllerConfig.SlideFriction * Time.deltaTime);
+
         charController.Velocity = Quaternion.Euler(0, 0, groundAngle) * relativeVelocity;
+
 
         // Sliding should snap to ground
         currentMoveInput.horizontalInput = Mathf.Sign(relativeVelocity.x);

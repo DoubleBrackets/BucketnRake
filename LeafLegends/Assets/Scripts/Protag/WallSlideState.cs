@@ -11,6 +11,8 @@ public partial class ProtagController : MonoBehaviour
     {
         inputProvider.OnJumpPressed += TrySwitchToJumpState;
         PrepWallJump();
+
+        AudioManager.Instance.PlaySFX(SFX.WallSlideStartup, transform.position);
         animator.Play("Wallslide");
     }
 
@@ -66,6 +68,7 @@ public partial class ProtagController : MonoBehaviour
         {
             return false;
         }
+
 
         var hit = charController.CastCapsule(
             0.1f,

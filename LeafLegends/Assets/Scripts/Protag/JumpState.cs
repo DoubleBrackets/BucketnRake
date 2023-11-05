@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public partial class ProtagController : MonoBehaviour
@@ -15,6 +16,8 @@ public partial class ProtagController : MonoBehaviour
         jumpTimer = ControllerConfig.JumpDuration;
         inputProvider.OnJumpReleased += ExitJumpEarly;
         inputProvider.OnSpecialAbilityPressed += TryGrapplingSwitch;
+
+        AudioManager.Instance.PlaySFX(SFX.Jump, transform.position);
         animator.Play("Jump");
     }
 
@@ -90,7 +93,14 @@ public partial class ProtagController : MonoBehaviour
 
         if (currentMoveInput.horizontalInput != 0)
         {
-            if (inputProvider.VerticalAxis < 0f && ControllerConfig.CanSlide)
+            var slideInput = inputProvider.VerticalAxis < 0f;
+            var vel = Rb.velocity;
+            var enoughSpeed = vel.magnitude >= ControllerConfig.SlideEnterMinVelocity;
+            var normal = charController.CurrentStateContext.groundNormal;
+
+            // Flat surface counts as a slope
+            var goingDownSlope = normal.x * vel.x >= 0f || Mathf.Abs(normal.x) < 0.01f;
+            if (slideInput && ControllerConfig.CanSlide && enoughSpeed && goingDownSlope && slideCooldownTimer <= 0f)
             {
                 return SwitchStates(ProtagStates.Sliding);
             }

@@ -184,6 +184,7 @@ public partial class ProtagController : MonoBehaviour
     private void FixedUpdate()
     {
         grappleCooldownTimer -= Time.deltaTime;
+        slideCooldownTimer -= Time.deltaTime;
 
         currentMoveInput = new CharController2D.MoveInput
         {
