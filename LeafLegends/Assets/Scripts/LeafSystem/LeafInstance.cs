@@ -35,9 +35,14 @@ public class LeafInstance : MonoBehaviour
     private bool raked;
     private bool isRaking;
 
-    public void Initialize(float rakeAngle, float rakeDistance)
+    private bool collected;
+
+    public event Action Collected;
+
+    public void ResetLeaf(float rakeAngle, float rakeDistance)
     {
         raked = false;
+        collected = false;
         rb.bodyType = RigidbodyType2D.Static;
         rakeDirection = (Vector2)(Quaternion.Euler(0, 0, rakeAngle) * Vector2.up);
         this.rakeDistance = rakeDistance + Random.Range(-distanceVariation, distanceVariation);
@@ -107,11 +112,13 @@ public class LeafInstance : MonoBehaviour
     public bool TryCollectWithBucket()
     {
         // can't collect leaves on the ground
-        if (rb.GetContacts(new ContactPoint2D[1]) > 0 || !raked)
+        if (rb.GetContacts(new ContactPoint2D[1]) > 0 || !raked || collected)
         {
             return false;
         }
 
+        collected = true;
+        Collected?.Invoke();
         gameObject.SetActive(false);
         return true;
     }

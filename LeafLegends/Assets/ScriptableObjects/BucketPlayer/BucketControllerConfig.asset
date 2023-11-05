@@ -14,8 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Config:
     GravityAccel: 22
-    AirbornHAcceleration: 35
-    AirbornHFriction: 25
+    AirbornHAcceleration: 25
+    AirbornHFriction: 20
     MaxHAirbornSpeed: 6
     JumpVelocity: 9.25
     CoyoteTime: 0.15

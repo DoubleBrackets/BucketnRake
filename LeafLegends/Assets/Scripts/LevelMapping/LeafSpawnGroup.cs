@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using Sirenix.OdinInspector;
 using UnityEngine;
 
-public class LeafProjector : MonoBehaviour
+public class LeafSpawnGroup : MonoBehaviour
 {
     [Header("Projection Config"), SerializeField]
     private float spreadLength;
@@ -27,6 +27,9 @@ public class LeafProjector : MonoBehaviour
 
     private List<LeafInstance> activeLeafInstances = new();
 
+    public int TotalLeaves { private set; get; }
+    public int CleanedLeaves { private set; get; }
+
     private struct ProjectInfo
     {
         public Vector2 startPos;
@@ -35,11 +38,10 @@ public class LeafProjector : MonoBehaviour
         public bool didHit;
     }
 
-    private void Start()
+    public void Initialize()
     {
         projectionHitsInfo = GetProjectionStartPos();
         GenerateInstances();
-        ResetLeaves();
     }
 
     private void GenerateInstances()
@@ -52,10 +54,11 @@ public class LeafProjector : MonoBehaviour
                 Quaternion.Euler(0, 0, Vector2.Angle(Vector2.up, projectionInfo.hitNormal)),
                 transform);
             activeLeafInstances.Add(createdLeafInstance);
+            createdLeafInstance.Collected += OnLeafCollected;
         }
     }
 
-    private void ResetLeaves()
+    public void ResetLeaves()
     {
         for (var i = 0; i < activeLeafInstances.Count; i++)
         {
@@ -63,8 +66,25 @@ public class LeafProjector : MonoBehaviour
             var leafInstance = activeLeafInstances[i];
             leafInstance.transform.position = projInfo.hitPos;
             leafInstance.transform.rotation = Quaternion.Euler(0, 0, Vector2.Angle(Vector2.up, projInfo.hitNormal));
-            leafInstance.Initialize(liftAngle, liftDistance);
+            leafInstance.ResetLeaf(liftAngle, liftDistance);
         }
+
+        TotalLeaves = activeLeafInstances.Count;
+        CleanedLeaves = 0;
+    }
+
+    private void OnDestroy()
+    {
+        for (var i = 0; i < activeLeafInstances.Count; i++)
+        {
+            var leafInstance = activeLeafInstances[i];
+            leafInstance.Collected -= OnLeafCollected;
+        }
+    }
+
+    private void OnLeafCollected()
+    {
+        CleanedLeaves++;
     }
 
     private void OnDrawGizmos()
@@ -110,7 +130,7 @@ public class LeafProjector : MonoBehaviour
         var projectionCount = (int)(spreadLength / projectionSpacing);
         var adjustedSpreadLength = projectionCount * projectionSpacing;
 
-        var projectionHits = new ProjectInfo[projectionCount];
+        var projectionHits = new List<ProjectInfo>();
         Vector2 spreadDir = Quaternion.Euler(0, 0, spreadAngle) * Vector2.right;
         Vector2 projectDir = Quaternion.Euler(0, 0, projectionAngle) * Vector2.right;
         for (var i = 0; i < projectionCount; i++)
@@ -125,16 +145,11 @@ public class LeafProjector : MonoBehaviour
                 projInfo.didHit = true;
                 projInfo.hitNormal = hit.normal;
                 projInfo.hitPos = projInfo.startPos + (hit.distance - projectionOffset) * projectDir;
+                projectionHits.Add(projInfo);
             }
-            else
-            {
-                projInfo.didHit = false;
-            }
-
-            projectionHits[i] = projInfo;
         }
 
-        return projectionHits;
+        return projectionHits.ToArray();
     }
 
     [Button("Set Lift Opposite to Projection")]

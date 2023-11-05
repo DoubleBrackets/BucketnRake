@@ -14,8 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Config:
     GravityAccel: 22
-    AirbornHAcceleration: 35
-    AirbornHFriction: 25
+    AirbornHAcceleration: 25
+    AirbornHFriction: 20
     MaxHAirbornSpeed: 6
     JumpVelocity: 9.25
     CoyoteTime: 0.15
@@ -35,6 +35,8 @@ MonoBehaviour:
     CanGrapple: 0
     GrapplePullSpeed: 0
     GrappleExitSpeed: 0
+    GrappleCooldown: 0
+    GrappleProjectileSpeed: 0
     GrappleEndOffset: 0
     GrappleRadius: 0
     GrappleLayerMask:
@@ -42,8 +44,8 @@ MonoBehaviour:
       m_Bits: 0
     CanWallSlide: 1
     WallSlideCastSizeYReduction: 0.3
-    WallSlideVel: -3
-    WallJumpVel: 11
+    WallSlideVel: -2.5
+    WallJumpVel: 12
     WallSlideMask:
       serializedVersion: 2
       m_Bits: 64
