@@ -82,6 +82,7 @@ public class LeafInstance : MonoBehaviour
         isRaking = true;
         var time = 0f;
         Vector2 startPos = transform.position;
+        rb.bodyType = RigidbodyType2D.Dynamic;
         while (time < rakeMotionDuration)
         {
             var t = time / rakeMotionDuration;
@@ -92,12 +93,11 @@ public class LeafInstance : MonoBehaviour
             }
 
             time += Time.deltaTime;
-            transform.position = startPos + rakeMotionCurve.Evaluate(t) * rakeDirection * rakeDistance;
+            rb.MovePosition(startPos + rakeMotionCurve.Evaluate(t) * rakeDirection * rakeDistance);
         }
 
         if (!raked)
         {
-            rb.bodyType = RigidbodyType2D.Dynamic;
             rakeDistance = defaultRakeDistance + Random.Range(-distanceVariation, distanceVariation);
             rakeDirection = Vector2.up;
             raked = true;
@@ -119,11 +119,21 @@ public class LeafInstance : MonoBehaviour
 
     public bool TryCollectWithBucket()
     {
-        // can't collect leaves on the ground
-        if (rb.GetContacts(new ContactPoint2D[1]) > 0 || !raked || collected)
+        if (!raked || collected)
         {
             return false;
         }
+
+        // can't collect leaves on the ground
+        /*var contacts = new ContactPoint2D[4];
+        rb.GetContacts(contacts);
+        foreach (var point in contacts)
+        {
+            if (point.point.y < transform.position.y - 0.05f)
+            {
+                return false;
+            }
+        }*/
 
         collected = true;
         Collected?.Invoke();

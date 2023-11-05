@@ -207,7 +207,7 @@ ScriptedImporter:
     rect:
       serializedVersion: 2
       x: 44
-      y: 182
+      y: 112
       width: 30
       height: 25
     spriteID: d5b47c7f48fc96e4593ab02639579e5a
@@ -218,7 +218,7 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 44, y: 182}
+    uvTransform: {x: 44, y: 112}
   - name: RakeLass_Frame_5
     originalName: 
     pivot: {x: 0.4333333, y: -0.39999998}
@@ -227,7 +227,7 @@ ScriptedImporter:
     rect:
       serializedVersion: 2
       x: 44
-      y: 215
+      y: 145
       width: 30
       height: 25
     spriteID: eefdf06122802ad4d9152f544f58d154
@@ -238,7 +238,7 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 44, y: 215}
+    uvTransform: {x: 44, y: 145}
   - name: RakeLass_Frame_6
     originalName: 
     pivot: {x: 0.4333333, y: -0.45833334}
@@ -247,7 +247,7 @@ ScriptedImporter:
     rect:
       serializedVersion: 2
       x: 4
-      y: 140
+      y: 74
       width: 30
       height: 24
     spriteID: e3d9665a1329ebe45b0c57662d436e1b
@@ -258,7 +258,7 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 4, y: 140}
+    uvTransform: {x: 4, y: 74}
   - name: RakeLass_Frame_7
     originalName: 
     pivot: {x: 0.4333333, y: -0.44}
@@ -266,8 +266,8 @@ ScriptedImporter:
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 4
-      y: 41
+      x: 44
+      y: 178
       width: 30
       height: 25
     spriteID: 84df2b10dcf664847b1b6a948a36ae2f
@@ -278,7 +278,7 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 4, y: 41}
+    uvTransform: {x: 44, y: 178}
   - name: RakeLass_Frame_8
     originalName: 
     pivot: {x: 0.4333333, y: -0.48}
@@ -286,8 +286,8 @@ ScriptedImporter:
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 4
-      y: 74
+      x: 44
+      y: 211
       width: 30
       height: 25
     spriteID: 9c4ce9f7dad8646439c48a38866533a4
@@ -298,7 +298,7 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 4, y: 74}
+    uvTransform: {x: 44, y: 211}
   - name: RakeLass_Frame_9
     originalName: 
     pivot: {x: 0.4333333, y: -0.52}
@@ -307,7 +307,7 @@ ScriptedImporter:
     rect:
       serializedVersion: 2
       x: 4
-      y: 107
+      y: 41
       width: 30
       height: 25
     spriteID: 4f5b402ff1997814bb027f7cabd64fc8
@@ -318,18 +318,18 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 4, y: 107}
+    uvTransform: {x: 4, y: 41}
   - name: RakeLass_Frame_10
     originalName: 
-    pivot: {x: 0.5333333, y: -0.4814815}
+    pivot: {x: 0.3809524, y: -0.41935486}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 44
-      y: 112
-      width: 30
-      height: 27
+      x: 4
+      y: 106
+      width: 21
+      height: 31
     spriteID: b47d119643835ba45bff49fe06cd1fb1
     spriteBone: []
     spriteOutline: []
@@ -338,18 +338,18 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 44, y: 112}
+    uvTransform: {x: 4, y: 106}
   - name: RakeLass_Frame_11
     originalName: 
-    pivot: {x: 0.5333333, y: -0.4814815}
+    pivot: {x: 0.3809524, y: -0.41935486}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 44
-      y: 147
-      width: 30
-      height: 27
+      x: 4
+      y: 145
+      width: 21
+      height: 31
     spriteID: 5c289b72ab238304bae38221c977acd3
     spriteBone: []
     spriteOutline: []
@@ -358,7 +358,7 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 44, y: 147}
+    uvTransform: {x: 4, y: 145}
   - name: RakeLass_Frame_12
     originalName: 
     pivot: {x: 0.5625, y: -0.42857143}
@@ -407,7 +407,7 @@ ScriptedImporter:
     rect:
       serializedVersion: 2
       x: 4
-      y: 172
+      y: 184
       width: 25
       height: 26
     spriteID: 79b82e8bf24a3644db7e96fba3b00ab1
@@ -418,7 +418,7 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 4, y: 172}
+    uvTransform: {x: 4, y: 184}
   spriteSheetImportData: []
   asepriteLayers:
   - layerIndex: 0
@@ -511,18 +511,18 @@ ScriptedImporter:
     - name: RakeLass_Frame_10
       frameIndex: 10
       cellRect:
-        x: 8
+        x: 16
         y: 13
-        width: 30
-        height: 27
+        width: 21
+        height: 31
       spriteId: b47d119643835ba45bff49fe06cd1fb1
     - name: RakeLass_Frame_11
       frameIndex: 11
       cellRect:
-        x: 8
+        x: 16
         y: 13
-        width: 30
-        height: 27
+        width: 21
+        height: 31
       spriteId: 5c289b72ab238304bae38221c977acd3
     - name: RakeLass_Frame_12
       frameIndex: 12

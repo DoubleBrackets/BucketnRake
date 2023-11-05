@@ -7,6 +7,9 @@ public class BucketAbility : MonoBehaviour
 {
     public bool CanBucket { get; set; } = true;
 
+    [SerializeField]
+    private AudioClip collectSFX;
+
     private void OnTriggerStay2D(Collider2D other)
     {
         TryBucket(other);
@@ -22,7 +25,10 @@ public class BucketAbility : MonoBehaviour
         var leafInstance = coll.GetComponent<LeafInstance>();
         if (leafInstance)
         {
-            leafInstance.TryCollectWithBucket();
+            if (leafInstance.TryCollectWithBucket())
+            {
+                AudioSource.PlayClipAtPoint(collectSFX, transform.position);
+            }
         }
     }
 }

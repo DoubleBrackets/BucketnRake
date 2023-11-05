@@ -185,19 +185,19 @@ public partial class ProtagController : MonoBehaviour
     {
         grappleCooldownTimer -= Time.deltaTime;
 
-        charController.UpdateControllerState(ControllerConfig, currentMoveInput);
-
-        FixedUpdateStates();
-
         currentMoveInput = new CharController2D.MoveInput
         {
             deltaTime = Time.fixedDeltaTime,
             horizontalInput = inputProvider.HorizontalAxis
         };
 
+        charController.UpdateControllerState(ControllerConfig, currentMoveInput);
+
+        FixedUpdateStates();
+
         if (rakeAbility)
         {
-            rakeAbility.CanRake = Mathf.Abs(charController.Velocity.x) > 0.1f;
+            rakeAbility.CanRake = charController.Velocity.sqrMagnitude > 0.1f;
         }
 
         if (ControllerConfig.CanGrapple)
@@ -211,9 +211,9 @@ public partial class ProtagController : MonoBehaviour
     private void UpdateSpriteScaleAndRotation()
     {
         var scale = rotatedBody.localScale;
-        if (inputProvider.HorizontalAxis != 0)
+        if (currentMoveInput.horizontalInput != 0)
         {
-            scale.x = inputProvider.HorizontalAxis;
+            scale.x = currentMoveInput.horizontalInput;
         }
 
         rotatedBody.localScale = scale;
