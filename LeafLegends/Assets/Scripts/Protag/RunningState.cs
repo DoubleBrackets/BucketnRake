@@ -10,6 +10,7 @@ public partial class ProtagController : MonoBehaviour
         ResetJumpVelocity();
         inputProvider.OnJumpPressed += TrySwitchToJumpState;
         inputProvider.OnSpecialAbilityPressed += TryGrapplingSwitch;
+        animator.Play("Run");
     }
 
     public void ExitRunningState()

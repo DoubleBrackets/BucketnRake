@@ -12,6 +12,7 @@ public partial class ProtagController : MonoBehaviour
         inputProvider.OnJumpPressed += TryJumpFromCrouch;
 
         charController.OffsetCapsuleHeight(-ControllerConfig.SlideHeightReduction);
+        animator.Play("Sliding");
     }
 
     public void ExitCrouchState()

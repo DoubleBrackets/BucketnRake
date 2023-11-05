@@ -15,6 +15,7 @@ public partial class ProtagController : MonoBehaviour
         jumpTimer = ControllerConfig.JumpDuration;
         inputProvider.OnJumpReleased += ExitJumpEarly;
         inputProvider.OnSpecialAbilityPressed += TryGrapplingSwitch;
+        animator.Play("Jump");
     }
 
     public void ExitJumpState()

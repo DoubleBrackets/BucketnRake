@@ -23,6 +23,9 @@ public partial class ProtagController : MonoBehaviour
     [SerializeField]
     private Transform rotatedBody;
 
+    [SerializeField]
+    private Animator animator;
+
     private CharController2DConfig ControllerConfig => controllerConfigSO.Config;
     private Rigidbody2D Rb => charController.Rb;
 

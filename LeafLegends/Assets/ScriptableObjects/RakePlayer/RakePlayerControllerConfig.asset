@@ -22,7 +22,7 @@ MonoBehaviour:
     JumpDuration: 0.5
     GroundedHAcceleration: 75
     GroundedHFriction: 50
-    MaxGroundedHSpeed: 5.5
+    MaxGroundedHSpeed: 6.25
     GroundLayerMask:
       serializedVersion: 2
       m_Bits: 64
@@ -45,7 +45,7 @@ MonoBehaviour:
     CanWallSlide: 1
     WallSlideCastSizeYReduction: 0.3
     WallSlideVel: -2.5
-    WallJumpVel: 10
+    WallJumpVel: 12
     WallSlideMask:
       serializedVersion: 2
       m_Bits: 64
@@ -53,4 +53,4 @@ MonoBehaviour:
     SlideHeightReduction: 1.01
     SlideMinVelocity: 3
     SlideFriction: 0
-    SlideGravityAccel: 22
+    SlideGravityAccel: 25

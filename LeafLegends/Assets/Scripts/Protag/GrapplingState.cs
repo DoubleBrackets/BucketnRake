@@ -53,6 +53,8 @@ public partial class ProtagController : MonoBehaviour
 
         charController.ForceAirborne(0.2f);
 
+        animator.Play("Grapple");
+
         DoGrapple();
     }
 

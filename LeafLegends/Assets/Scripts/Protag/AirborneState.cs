@@ -29,6 +29,15 @@ public partial class ProtagController : MonoBehaviour
         {
             return;
         }
+
+        if (Rb.velocity.y > 0)
+        {
+            animator.Play("Jump");
+        }
+        else
+        {
+            animator.Play("Airborne");
+        }
     }
 
     public void FixedUpdateAirborneState()

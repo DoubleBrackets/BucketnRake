@@ -11,6 +11,7 @@ public partial class ProtagController : MonoBehaviour
     {
         inputProvider.OnJumpPressed += TrySwitchToJumpState;
         PrepWallJump();
+        animator.Play("Wallslide");
     }
 
     public void ExitWallSlideState()

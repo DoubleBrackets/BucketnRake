@@ -35,7 +35,7 @@ ScriptedImporter:
     spriteMeshType: 1
     alignment: 0
     spritePivot: {x: 0.5, y: 0.5}
-    spritePixelsToUnits: 100
+    spritePixelsToUnits: 16
     spriteBorder: {x: 0, y: 0, z: 0, w: 0}
     spriteGenerateFallbackPhysicsShape: 0
     generateCubemap: 6
@@ -95,7 +95,7 @@ ScriptedImporter:
     addSortingGroup: 1
     addShadowCasters: 0
   importFileNodeState: 1
-  platformSettingsDirtyTick: 0
+  platformSettingsDirtyTick: 638347601989555723
   textureAssetName: 
   singleSpriteImportData:
   - name: 
@@ -121,14 +121,14 @@ ScriptedImporter:
   animatedSpriteImportData:
   - name: RakeLass
     originalName: 
-    pivot: {x: 0.5, y: -0.39285716}
+    pivot: {x: 0.6666667, y: -0.39285716}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 4
+      x: 44
       y: 4
-      width: 48
+      width: 33
       height: 28
     spriteID: 031b9226f81511d4089040397428defc
     spriteBone: []
@@ -138,18 +138,18 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 4, y: 4}
+    uvTransform: {x: 44, y: 4}
   - name: RakeLass_Frame_1
     originalName: 
-    pivot: {x: 0.5, y: -0.44}
+    pivot: {x: 0.6666667, y: -0.35714287}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 4
+      x: 44
       y: 40
-      width: 48
-      height: 25
+      width: 33
+      height: 28
     spriteID: 9640a5815a9715f418cd3a8349bab53b
     spriteBone: []
     spriteOutline: []
@@ -158,7 +158,267 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 4, y: 40}
+    uvTransform: {x: 44, y: 40}
+  - name: RakeLass_Frame_2
+    originalName: 
+    pivot: {x: 0.62857145, y: -0.6666667}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 85
+      y: 4
+      width: 35
+      height: 18
+    spriteID: 7dd724a57af48304994a244decf0d21a
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 85, y: 4}
+  - name: RakeLass_Frame_3
+    originalName: 
+    pivot: {x: 0.62857145, y: -0.6666667}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 85
+      y: 30
+      width: 35
+      height: 18
+    spriteID: 739b57274ea44e04f8abe872d2e4a3dc
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 85, y: 30}
+  - name: RakeLass_Frame_4
+    originalName: 
+    pivot: {x: 0.4333333, y: -0.48}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 44
+      y: 182
+      width: 30
+      height: 25
+    spriteID: d5b47c7f48fc96e4593ab02639579e5a
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 44, y: 182}
+  - name: RakeLass_Frame_5
+    originalName: 
+    pivot: {x: 0.4333333, y: -0.39999998}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 44
+      y: 215
+      width: 30
+      height: 25
+    spriteID: eefdf06122802ad4d9152f544f58d154
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 44, y: 215}
+  - name: RakeLass_Frame_6
+    originalName: 
+    pivot: {x: 0.4333333, y: -0.45833334}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 140
+      width: 30
+      height: 24
+    spriteID: e3d9665a1329ebe45b0c57662d436e1b
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 140}
+  - name: RakeLass_Frame_7
+    originalName: 
+    pivot: {x: 0.4333333, y: -0.44}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 41
+      width: 30
+      height: 25
+    spriteID: 84df2b10dcf664847b1b6a948a36ae2f
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 41}
+  - name: RakeLass_Frame_8
+    originalName: 
+    pivot: {x: 0.4333333, y: -0.48}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 74
+      width: 30
+      height: 25
+    spriteID: 9c4ce9f7dad8646439c48a38866533a4
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 74}
+  - name: RakeLass_Frame_9
+    originalName: 
+    pivot: {x: 0.4333333, y: -0.52}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 107
+      width: 30
+      height: 25
+    spriteID: 4f5b402ff1997814bb027f7cabd64fc8
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 107}
+  - name: RakeLass_Frame_10
+    originalName: 
+    pivot: {x: 0.5333333, y: -0.4814815}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 44
+      y: 112
+      width: 30
+      height: 27
+    spriteID: b47d119643835ba45bff49fe06cd1fb1
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 44, y: 112}
+  - name: RakeLass_Frame_11
+    originalName: 
+    pivot: {x: 0.5333333, y: -0.4814815}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 44
+      y: 147
+      width: 30
+      height: 27
+    spriteID: 5c289b72ab238304bae38221c977acd3
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 44, y: 147}
+  - name: RakeLass_Frame_12
+    originalName: 
+    pivot: {x: 0.5625, y: -0.42857143}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 44
+      y: 76
+      width: 32
+      height: 28
+    spriteID: 729d1d9249fdd04469c13ad53cac16cb
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 44, y: 76}
+  - name: RakeLass_Frame_13
+    originalName: 
+    pivot: {x: 0.5625, y: -0.41379312}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 4
+      width: 32
+      height: 29
+    spriteID: 98df1220b87580446b771d7681182b79
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 4}
+  - name: RakeLass_Frame_14
+    originalName: 
+    pivot: {x: 0.59999996, y: -0.5}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 172
+      width: 25
+      height: 26
+    spriteID: 79b82e8bf24a3644db7e96fba3b00ab1
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 172}
   spriteSheetImportData: []
   asepriteLayers:
   - layerIndex: 0
@@ -171,22 +431,174 @@ ScriptedImporter:
     - name: RakeLass_Frame_0
       frameIndex: 0
       cellRect:
-        x: 0
+        x: 2
         y: 11
-        width: 48
+        width: 33
         height: 28
       spriteId: 031b9226f81511d4089040397428defc
     - name: RakeLass_Frame_1
       frameIndex: 1
       cellRect:
-        x: 0
-        y: 11
-        width: 48
-        height: 25
+        x: 2
+        y: 10
+        width: 33
+        height: 28
       spriteId: 9640a5815a9715f418cd3a8349bab53b
+    - name: RakeLass_Frame_2
+      frameIndex: 2
+      cellRect:
+        x: 2
+        y: 12
+        width: 35
+        height: 18
+      spriteId: 7dd724a57af48304994a244decf0d21a
+    - name: RakeLass_Frame_3
+      frameIndex: 3
+      cellRect:
+        x: 2
+        y: 12
+        width: 35
+        height: 18
+      spriteId: 739b57274ea44e04f8abe872d2e4a3dc
+    - name: RakeLass_Frame_4
+      frameIndex: 4
+      cellRect:
+        x: 11
+        y: 12
+        width: 30
+        height: 25
+      spriteId: d5b47c7f48fc96e4593ab02639579e5a
+    - name: RakeLass_Frame_5
+      frameIndex: 5
+      cellRect:
+        x: 11
+        y: 10
+        width: 30
+        height: 25
+      spriteId: eefdf06122802ad4d9152f544f58d154
+    - name: RakeLass_Frame_6
+      frameIndex: 6
+      cellRect:
+        x: 11
+        y: 11
+        width: 30
+        height: 24
+      spriteId: e3d9665a1329ebe45b0c57662d436e1b
+    - name: RakeLass_Frame_7
+      frameIndex: 7
+      cellRect:
+        x: 11
+        y: 11
+        width: 30
+        height: 25
+      spriteId: 84df2b10dcf664847b1b6a948a36ae2f
+    - name: RakeLass_Frame_8
+      frameIndex: 8
+      cellRect:
+        x: 11
+        y: 12
+        width: 30
+        height: 25
+      spriteId: 9c4ce9f7dad8646439c48a38866533a4
+    - name: RakeLass_Frame_9
+      frameIndex: 9
+      cellRect:
+        x: 11
+        y: 13
+        width: 30
+        height: 25
+      spriteId: 4f5b402ff1997814bb027f7cabd64fc8
+    - name: RakeLass_Frame_10
+      frameIndex: 10
+      cellRect:
+        x: 8
+        y: 13
+        width: 30
+        height: 27
+      spriteId: b47d119643835ba45bff49fe06cd1fb1
+    - name: RakeLass_Frame_11
+      frameIndex: 11
+      cellRect:
+        x: 8
+        y: 13
+        width: 30
+        height: 27
+      spriteId: 5c289b72ab238304bae38221c977acd3
+    - name: RakeLass_Frame_12
+      frameIndex: 12
+      cellRect:
+        x: 6
+        y: 12
+        width: 32
+        height: 28
+      spriteId: 729d1d9249fdd04469c13ad53cac16cb
+    - name: RakeLass_Frame_13
+      frameIndex: 13
+      cellRect:
+        x: 6
+        y: 12
+        width: 32
+        height: 29
+      spriteId: 98df1220b87580446b771d7681182b79
+    - name: RakeLass_Frame_14
+      frameIndex: 14
+      cellRect:
+        x: 9
+        y: 13
+        width: 25
+        height: 26
+      spriteId: 79b82e8bf24a3644db7e96fba3b00ab1
     linkedCells: []
     parentIndex: -1
-  platformSettings: []
+  platformSettings:
+  - name: DefaultTexturePlatform
+    overridden: 0
+    ignorePlatformSupport: 0
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    androidETC2FallbackOverride: 0
+  - name: Standalone
+    overridden: 0
+    ignorePlatformSupport: 0
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    androidETC2FallbackOverride: 0
+  - name: Server
+    overridden: 0
+    ignorePlatformSupport: 0
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    androidETC2FallbackOverride: 0
+  - name: WebGL
+    overridden: 0
+    ignorePlatformSupport: 0
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    androidETC2FallbackOverride: 0
   secondarySpriteTextures: []
   spritePackingTag: 
   canvasSize: {x: 48, y: 48}

@@ -310,21 +310,21 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 7
       objectReference: {fileID: 0}
-    - target: {fileID: 2780942576265794111, guid: 9b323173154aa8043940420061deb371, type: 3}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: -2022226742, guid: 8755fe352bc12244f91ef15de3a86d6c, type: 3}
-    - target: {fileID: 2780942576265794111, guid: 9b323173154aa8043940420061deb371, type: 3}
-      propertyPath: m_Color.b
-      value: 1
+    - target: {fileID: 2097438114042758291, guid: 9b323173154aa8043940420061deb371, type: 3}
+      propertyPath: m_Size.x
+      value: 0.5
       objectReference: {fileID: 0}
-    - target: {fileID: 2780942576265794111, guid: 9b323173154aa8043940420061deb371, type: 3}
-      propertyPath: m_Color.g
-      value: 1
+    - target: {fileID: 2097438114042758291, guid: 9b323173154aa8043940420061deb371, type: 3}
+      propertyPath: m_Size.y
+      value: 1.5
       objectReference: {fileID: 0}
-    - target: {fileID: 2780942576265794111, guid: 9b323173154aa8043940420061deb371, type: 3}
-      propertyPath: m_Color.r
-      value: 1
+    - target: {fileID: 2097438114042758291, guid: 9b323173154aa8043940420061deb371, type: 3}
+      propertyPath: m_Offset.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3947786282758850083, guid: 9b323173154aa8043940420061deb371, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.766
       objectReference: {fileID: 0}
     - target: {fileID: 3973606055230161357, guid: 9b323173154aa8043940420061deb371, type: 3}
       propertyPath: m_Layer
@@ -346,6 +346,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 5493904613512210244, guid: 9b323173154aa8043940420061deb371, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: a900e2c109a9f97448b3998293640217, type: 2}
     - target: {fileID: 5698999216106409429, guid: 9b323173154aa8043940420061deb371, type: 3}
       propertyPath: collider
       value: 
@@ -382,6 +386,14 @@ PrefabInstance:
       propertyPath: groundCastSizeReduction
       value: 0.1
       objectReference: {fileID: 0}
+    - target: {fileID: 5859035914380881668, guid: 9b323173154aa8043940420061deb371, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.774
+      objectReference: {fileID: 0}
+    - target: {fileID: 8751264601412483865, guid: 9b323173154aa8043940420061deb371, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: a900e2c109a9f97448b3998293640217, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects:
