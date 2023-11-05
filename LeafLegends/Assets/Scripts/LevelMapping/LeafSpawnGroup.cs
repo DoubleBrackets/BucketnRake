@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using Sirenix.OdinInspector;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 public class LeafSpawnGroup : MonoBehaviour
 {
@@ -65,7 +66,7 @@ public class LeafSpawnGroup : MonoBehaviour
             var projInfo = projectionHitsInfo[i];
             var leafInstance = activeLeafInstances[i];
             leafInstance.transform.position = projInfo.hitPos;
-            leafInstance.transform.rotation = Quaternion.Euler(0, 0, Vector2.Angle(Vector2.up, projInfo.hitNormal));
+            leafInstance.transform.rotation = Quaternion.Euler(0, 0, Random.Range(0f, 360f));
             leafInstance.ResetLeaf(liftAngle, liftDistance);
         }
 

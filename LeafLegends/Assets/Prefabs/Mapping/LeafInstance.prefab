@@ -27,7 +27,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 3, y: 2, z: 2}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1592575130960553154}
@@ -73,8 +73,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 10911, guid: 0000000000000000f000000000000000, type: 0}
-  m_Color: {r: 0.05147934, g: 1, b: 0, a: 1}
+  m_Sprite: {fileID: -230026884, guid: a1a51b2d428c1d344bd4c3e76335747c, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -161,6 +161,12 @@ MonoBehaviour:
   rakeHorizontalVelVariation: 0.2
   rakeAngleVelVariation: 90
   defaultRakeDistance: 2.4
+  spriteRen: {fileID: 108716499089097616}
+  sprites:
+  - {fileID: 1819454555, guid: a1a51b2d428c1d344bd4c3e76335747c, type: 3}
+  - {fileID: -230026884, guid: a1a51b2d428c1d344bd4c3e76335747c, type: 3}
+  - {fileID: 513260434, guid: a1a51b2d428c1d344bd4c3e76335747c, type: 3}
+  - {fileID: 1529438731, guid: a1a51b2d428c1d344bd4c3e76335747c, type: 3}
 --- !u!50 &2968465808515187097
 Rigidbody2D:
   serializedVersion: 4
@@ -177,7 +183,7 @@ Rigidbody2D:
   m_LinearDrag: 1.25
   m_AngularDrag: 0.05
   m_GravityScale: 0.1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 839f30059a593ef4d88e61ecff9c6ecc, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -220,7 +226,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: -0.030439377, y: -0.038048506}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -231,5 +237,5 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.5, y: 0.3}
+  m_Size: {x: 0.25, y: 0.25}
   m_EdgeRadius: 0

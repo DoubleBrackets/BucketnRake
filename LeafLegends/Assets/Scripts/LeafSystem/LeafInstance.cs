@@ -29,6 +29,12 @@ public class LeafInstance : MonoBehaviour
     [SerializeField]
     private float defaultRakeDistance;
 
+    [SerializeField]
+    private SpriteRenderer spriteRen;
+
+    [SerializeField]
+    private Sprite[] sprites;
+
     private Vector2 rakeDirection;
     private float rakeDistance;
 
@@ -46,6 +52,8 @@ public class LeafInstance : MonoBehaviour
         rb.bodyType = RigidbodyType2D.Static;
         rakeDirection = (Vector2)(Quaternion.Euler(0, 0, rakeAngle) * Vector2.up);
         this.rakeDistance = rakeDistance + Random.Range(-distanceVariation, distanceVariation);
+        spriteRen.sprite = sprites[Random.Range(0, sprites.Length)];
+        spriteRen.transform.localPosition = new Vector2(Random.Range(-0.2f, 0.2f), Random.Range(-0.2f, 0.2f));
     }
 
     public bool TryRake()

@@ -249,8 +249,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.25}
   m_AnchorMax: {x: 1, y: 0.75}
-  m_AnchoredPosition: {x: -5, y: 0}
-  m_SizeDelta: {x: -20, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &874088588
 GameObject:
@@ -337,7 +337,7 @@ MonoBehaviour:
   m_MinValue: 0
   m_MaxValue: 1
   m_WholeNumbers: 0
-  m_Value: 0
+  m_Value: 1
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -378,11 +378,11 @@ RectTransform:
   - {fileID: 1942625880}
   m_Father: {fileID: 1746160855}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 1, y: 1}
-  m_AnchorMax: {x: 1, y: 1}
+  m_AnchorMin: {x: 1, y: 0}
+  m_AnchorMax: {x: 1, y: 0}
   m_AnchoredPosition: {x: -50, y: 0}
   m_SizeDelta: {x: 500, y: 100}
-  m_Pivot: {x: 1, y: 1}
+  m_Pivot: {x: 1, y: 0}
 --- !u!114 &1351717916 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 2495281591633758268, guid: a80e9ebd57ede85439a2c6aab81498d2, type: 3}
@@ -504,7 +504,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 10, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1610829303
 MonoBehaviour:
@@ -680,7 +680,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 1, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -66}
+  m_AnchoredPosition: {x: 0, y: 40}
   m_SizeDelta: {x: 0, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1942625881
@@ -705,8 +705,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: New Text
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 165486f9bce79b24fbd45bba5b2aa1dc, type: 2}
+  m_sharedMaterial: {fileID: -5489752740203938311, guid: 165486f9bce79b24fbd45bba5b2aa1dc, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -730,8 +730,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 35
-  m_fontSizeBase: 35
+  m_fontSize: 45
+  m_fontSizeBase: 45
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -922,19 +922,39 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3035228054902175498, guid: 5457ec04a5f5af544b979861837365a0, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 26.69
+      value: 7.21
       objectReference: {fileID: 0}
     - target: {fileID: 3035228054902175498, guid: 5457ec04a5f5af544b979861837365a0, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 5.02
+      value: 4.08
+      objectReference: {fileID: 0}
+    - target: {fileID: 3035228054902175498, guid: 5457ec04a5f5af544b979861837365a0, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4231383621280297165, guid: 5457ec04a5f5af544b979861837365a0, type: 3}
       propertyPath: m_Name
       value: CameraSystem
       objectReference: {fileID: 0}
     - target: {fileID: 4886499257787564939, guid: 5457ec04a5f5af544b979861837365a0, type: 3}
+      propertyPath: m_ClearFlags
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4886499257787564939, guid: 5457ec04a5f5af544b979861837365a0, type: 3}
       propertyPath: orthographic size
-      value: 7
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4886499257787564939, guid: 5457ec04a5f5af544b979861837365a0, type: 3}
+      propertyPath: m_BackGroundColor.b
+      value: 0.7107511
+      objectReference: {fileID: 0}
+    - target: {fileID: 4886499257787564939, guid: 5457ec04a5f5af544b979861837365a0, type: 3}
+      propertyPath: m_BackGroundColor.g
+      value: 0.87128603
+      objectReference: {fileID: 0}
+    - target: {fileID: 4886499257787564939, guid: 5457ec04a5f5af544b979861837365a0, type: 3}
+      propertyPath: m_BackGroundColor.r
+      value: 0.9339623
       objectReference: {fileID: 0}
     - target: {fileID: 8815083828305672726, guid: 5457ec04a5f5af544b979861837365a0, type: 3}
       propertyPath: m_LocalPosition.x

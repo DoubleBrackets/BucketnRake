@@ -33,6 +33,7 @@ public class GrappleVisuals : MonoBehaviour
     private void Awake()
     {
         ClearTarget();
+        UnlinkPoint();
         grappleProjectile.SetActive(false);
     }
 
