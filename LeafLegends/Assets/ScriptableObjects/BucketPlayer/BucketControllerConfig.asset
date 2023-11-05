@@ -55,3 +55,5 @@ MonoBehaviour:
     SlideEnterMinVelocity: 0
     SlideFriction: 0
     SlideGravityAccel: 0
+    SlideStaticCooldown: 0
+    SlideInitialSpeedBoostRatio: 0

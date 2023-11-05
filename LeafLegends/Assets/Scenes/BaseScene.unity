@@ -1358,6 +1358,14 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 2608915311036688173, guid: 5457ec04a5f5af544b979861837365a0, type: 3}
+      propertyPath: widthMargin
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2608915311036688173, guid: 5457ec04a5f5af544b979861837365a0, type: 3}
+      propertyPath: heightMargin
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2608915311036688173, guid: 5457ec04a5f5af544b979861837365a0, type: 3}
       propertyPath: unitLerpFactor
       value: 0.98
       objectReference: {fileID: 0}
