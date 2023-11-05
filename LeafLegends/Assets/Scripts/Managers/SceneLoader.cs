@@ -10,12 +10,13 @@ public class SceneLoader : MonoBehaviour
     [SerializeField]
     private Material material;
 
-    private string currentLevel;
+    private string currentLevel = String.Empty;
 
     private void Awake()
     {
 #if UNITY_EDITOR
-        currentLevel = SceneManager.GetSceneAt(1).name;
+        if(SceneManager.sceneCount > 1) 
+            currentLevel = SceneManager.GetSceneAt(1).name;
 #endif
     }
 
