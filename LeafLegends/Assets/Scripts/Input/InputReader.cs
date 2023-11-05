@@ -26,7 +26,7 @@ public class InputReader : MonoBehaviour
             bucketPlayerInputProvider.InvokeOnJumpPressed();
         }
 
-        if (Input.GetKeyUp(KeyCode.Space) )
+        if (Input.GetKeyUp(KeyCode.Space))
         {
             bucketPlayerInputProvider.InvokeOnJumpReleased();
         }
@@ -42,12 +42,12 @@ public class InputReader : MonoBehaviour
         rakePlayerInputProvider.HorizontalAxis = (Input.GetKey(KeyCode.LeftArrow) ? -1 : 0) + (Input.GetKey(KeyCode.RightArrow) ? 1 : 0);
         rakePlayerInputProvider.VerticalAxis = (Input.GetKey(KeyCode.DownArrow) ? -1 : 0) + (Input.GetKey(KeyCode.UpArrow) ? 1 : 0);
 
-        if (Input.GetKeyDown(KeyCode.Question) || Input.GetKeyDown(KeyCode.RightControl))
+        if (Input.GetKeyDown(KeyCode.UpArrow) || Input.GetKeyDown(KeyCode.RightControl) || Input.GetKeyUp(KeyCode.Question))
         {
             rakePlayerInputProvider.InvokeOnJumpPressed();
         }
 
-        if (Input.GetKeyUp(KeyCode.Question) || Input.GetKeyUp(KeyCode.RightControl))
+        if (Input.GetKeyUp(KeyCode.UpArrow) || Input.GetKeyUp(KeyCode.RightControl) || Input.GetKeyUp(KeyCode.Question))
         {
             rakePlayerInputProvider.InvokeOnJumpReleased();
         }
