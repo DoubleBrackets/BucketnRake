@@ -33,6 +33,7 @@ public class AudioManager : MonoBehaviour
     {
         public SFX type;
         public AudioClip[] clip;
+        [Range(0,1)] public float volume;
     }
 
     private void Awake()
@@ -63,6 +64,6 @@ public class AudioManager : MonoBehaviour
             return;
         }
 
-        AudioSource.PlayClipAtPoint(clips[Random.Range(0, clips.Length)], pos);
+        AudioSource.PlayClipAtPoint(clips[Random.Range(0, clips.Length)], pos, sfxClips[(int)sfxType].volume);
     }
 }

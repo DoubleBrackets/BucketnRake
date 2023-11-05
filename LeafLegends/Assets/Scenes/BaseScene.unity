@@ -1443,30 +1443,40 @@ MonoBehaviour:
   - type: 0
     clip:
     - {fileID: 8300000, guid: 81b354f305556f44c8a9ec4460f5d90e, type: 3}
+    volume: 1
   - type: 1
     clip:
     - {fileID: 8300000, guid: a3294c7ddde59cd48a4175d0322cdd3e, type: 3}
+    volume: 1
   - type: 2
     clip:
     - {fileID: 8300000, guid: 086ddeea551471247a5b078981787cd6, type: 3}
+    volume: 1
   - type: 3
     clip:
     - {fileID: 8300000, guid: 8abc758b9b2a87a48887d063241af5ea, type: 3}
+    volume: 1
   - type: 4
     clip:
     - {fileID: 8300000, guid: f8b306a9e0dc4dd4daa42d03cd0918a4, type: 3}
+    volume: 1
   - type: 5
     clip:
     - {fileID: 8300000, guid: a44c403ebbf45844b9dab8c8f322c14c, type: 3}
+    volume: 1
   - type: 6
     clip:
     - {fileID: 8300000, guid: 9b3b29811f727bd46950fa84a9068223, type: 3}
+    volume: 1
   - type: 7
     clip: []
+    volume: 0
   - type: 8
     clip: []
+    volume: 0
   - type: 9
     clip: []
+    volume: 0
 --- !u!1001 &417184947616785563
 PrefabInstance:
   m_ObjectHideFlags: 0
