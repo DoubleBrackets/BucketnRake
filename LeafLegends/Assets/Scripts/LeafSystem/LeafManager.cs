@@ -71,7 +71,7 @@ public class LeafManager : MonoBehaviour
 
         if (changed)
         {
-            OnLeavesChanged?.Invoke(CleanedLeaves, TotalLeaves);
+            OnLeavesChanged?.Invoke(CleanedLeaves, (int)(TotalLeaves * 0.975f));
         }
     }
 }

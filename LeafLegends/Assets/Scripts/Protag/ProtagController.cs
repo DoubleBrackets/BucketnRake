@@ -241,6 +241,8 @@ public partial class ProtagController : MonoBehaviour
         }
     }
 
+    private Vector2 grappleSearchInput;
+
     private void TrySearchForGrapplePoints()
     {
         if (targetedGrapplePoint != null)
@@ -260,6 +262,14 @@ public partial class ProtagController : MonoBehaviour
         var colliders = Physics2D.OverlapCircleAll(transform.position, ControllerConfig.GrappleRadius, ControllerConfig.GrappleLayerMask);
 
         var inputVector = new Vector2(inputProvider.HorizontalAxis, inputProvider.VerticalAxis);
+        if (inputVector != Vector2.zero)
+        {
+            grappleSearchInput = inputVector;
+        }
+        else
+        {
+            inputVector = grappleSearchInput;
+        }
 
         // Choose the point that aligns to the input vector the most
         GrapplePoint bestCandidate = null;

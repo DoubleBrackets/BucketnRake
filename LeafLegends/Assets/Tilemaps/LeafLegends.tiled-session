@@ -10,16 +10,24 @@
     "file.lastUsedOpenFilter": "All Files (*)",
     "fileStates": {
         "Level1.tmx": {
-            "scale": 3,
+            "scale": 0.33,
+            "selectedLayer": 2,
+            "viewCenter": {
+                "x": 81.81818181818176,
+                "y": 301.5151515151515
+            }
+        },
+        "Level2.tmx": {
+            "scale": 0.75,
             "selectedLayer": 0,
             "viewCenter": {
-                "x": 642.6666666666666,
-                "y": -144.33333333333331
+                "x": 350.66666666666663,
+                "y": 19.33333333333337
             }
         },
         "Main.tsx": {
-            "scaleInDock": 2,
-            "scaleInEditor": 8
+            "scaleInDock": 3,
+            "scaleInEditor": 5.5
         },
         "Prototyping.tsx": {
             "scaleInDock": 3,
@@ -47,6 +55,7 @@
     ],
     "project": "LeafLegends.tiled-project",
     "recentFiles": [
+        "Level2.tmx",
         "Level1.tmx",
         "testingTilemap.tmx",
         "Prototyping.tsx",

@@ -27,7 +27,9 @@ public class SceneLoader : MonoBehaviour
             await SceneManager.UnloadSceneAsync(currentLevel);
         }
 
+
         await SceneManager.LoadSceneAsync(sceneName, LoadSceneMode.Additive);
+        currentLevel = sceneName;
         SceneManager.SetActiveScene(SceneManager.GetSceneByName(sceneName));
     }
 }

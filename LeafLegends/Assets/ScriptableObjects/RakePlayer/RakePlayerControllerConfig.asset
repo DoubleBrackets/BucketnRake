@@ -17,7 +17,7 @@ MonoBehaviour:
     AirbornHAcceleration: 25
     AirbornHFriction: 25
     MaxHAirbornSpeed: 7
-    JumpVelocity: 9.25
+    JumpVelocity: 9.5
     CoyoteTime: 0.15
     JumpDuration: 0.5
     GroundedHAcceleration: 75

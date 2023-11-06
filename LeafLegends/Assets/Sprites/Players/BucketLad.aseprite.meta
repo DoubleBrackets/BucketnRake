@@ -127,7 +127,7 @@ ScriptedImporter:
     rect:
       serializedVersion: 2
       x: 71
-      y: 4
+      y: 76
       width: 19
       height: 27
     spriteID: b2f0d068a4e570e4a8237e186f5ebf26
@@ -138,7 +138,7 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 71, y: 4}
+    uvTransform: {x: 71, y: 76}
   - name: BucketLad_Frame_1
     originalName: 
     pivot: {x: 0.36842108, y: -0.46153846}
@@ -147,7 +147,7 @@ ScriptedImporter:
     rect:
       serializedVersion: 2
       x: 71
-      y: 109
+      y: 111
       width: 19
       height: 26
     spriteID: 4c11609a75ec5584583c90b9fc3e2578
@@ -158,7 +158,7 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 71, y: 109}
+    uvTransform: {x: 71, y: 111}
   - name: BucketLad_Frame_2
     originalName: 
     pivot: {x: 0.35999998, y: -0.5416667}
@@ -167,7 +167,7 @@ ScriptedImporter:
     rect:
       serializedVersion: 2
       x: 4
-      y: 70
+      y: 72
       width: 25
       height: 24
     spriteID: 0410c3eb90de8f048b2e1500114f94be
@@ -178,18 +178,18 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 4, y: 70}
+    uvTransform: {x: 4, y: 72}
   - name: BucketLad_Frame_3
     originalName: 
-    pivot: {x: 0.30434784, y: -0.5}
+    pivot: {x: 0.30434784, y: -0.48}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
       x: 4
-      y: 204
+      y: 206
       width: 23
-      height: 24
+      height: 25
     spriteID: c550c5658f03b844b90ecc94380b62ae
     spriteBone: []
     spriteOutline: []
@@ -198,10 +198,10 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 4, y: 204}
+    uvTransform: {x: 4, y: 206}
   - name: BucketLad_Frame_4
     originalName: 
-    pivot: {x: 0.20000003, y: -0.5}
+    pivot: {x: 0.20000003, y: -0.48}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
@@ -209,7 +209,7 @@ ScriptedImporter:
       x: 98
       y: 4
       width: 20
-      height: 24
+      height: 25
     spriteID: 991f1a41965bc194bb74ed0c75fbb7ef
     spriteBone: []
     spriteOutline: []
@@ -221,15 +221,15 @@ ScriptedImporter:
     uvTransform: {x: 98, y: 4}
   - name: BucketLad_Frame_5
     originalName: 
-    pivot: {x: 0.27272728, y: -0.48}
+    pivot: {x: 0.27272728, y: -0.46153846}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
       x: 37
-      y: 96
+      y: 99
       width: 22
-      height: 25
+      height: 26
     spriteID: b1bbecdfd721a1444af63a187a7657c6
     spriteBone: []
     spriteOutline: []
@@ -238,10 +238,10 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 37, y: 96}
+    uvTransform: {x: 37, y: 99}
   - name: BucketLad_Frame_6
     originalName: 
-    pivot: {x: 0.35999998, y: -0.52}
+    pivot: {x: 0.35999998, y: -0.5}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
@@ -249,7 +249,7 @@ ScriptedImporter:
       x: 4
       y: 4
       width: 25
-      height: 25
+      height: 26
     spriteID: 1551e58cc7de1df47a6fb396baa6debf
     spriteBone: []
     spriteOutline: []
@@ -261,7 +261,7 @@ ScriptedImporter:
     uvTransform: {x: 4, y: 4}
   - name: BucketLad_Frame_7
     originalName: 
-    pivot: {x: 0.3846154, y: -0.72727275}
+    pivot: {x: 0.3846154, y: -0.6956522}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
@@ -269,7 +269,7 @@ ScriptedImporter:
       x: 37
       y: 4
       width: 26
-      height: 22
+      height: 23
     spriteID: 17f35c02d6f318547a6880f5c4b9ae09
     spriteBone: []
     spriteOutline: []
@@ -287,7 +287,7 @@ ScriptedImporter:
     rect:
       serializedVersion: 2
       x: 4
-      y: 102
+      y: 104
       width: 25
       height: 24
     spriteID: 4aa5de7cf67539542ad4299cf7d0e536
@@ -298,18 +298,18 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 4, y: 102}
+    uvTransform: {x: 4, y: 104}
   - name: BucketLad_Frame_9
     originalName: 
-    pivot: {x: 0.30434784, y: -0.5}
+    pivot: {x: 0.30434784, y: -0.48}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
       x: 37
-      y: 64
+      y: 66
       width: 23
-      height: 24
+      height: 25
     spriteID: 6421e60af7cf4744d9578717c45738cc
     spriteBone: []
     spriteOutline: []
@@ -318,18 +318,18 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 37, y: 64}
+    uvTransform: {x: 37, y: 66}
   - name: BucketLad_Frame_10
     originalName: 
-    pivot: {x: 0.15789473, y: -0.5}
+    pivot: {x: 0.15789473, y: -0.48}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
       x: 71
-      y: 143
+      y: 145
       width: 19
-      height: 24
+      height: 25
     spriteID: ed4caed35961ba24ab1f1d6ad261947d
     spriteBone: []
     spriteOutline: []
@@ -338,18 +338,18 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 71, y: 143}
+    uvTransform: {x: 71, y: 145}
   - name: BucketLad_Frame_11
     originalName: 
-    pivot: {x: 0.27272728, y: -0.48}
+    pivot: {x: 0.27272728, y: -0.46153846}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
       x: 37
-      y: 129
+      y: 133
       width: 22
-      height: 25
+      height: 26
     spriteID: 5519897d2b6775a43befe16524535550
     spriteBone: []
     spriteOutline: []
@@ -358,18 +358,18 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 37, y: 129}
+    uvTransform: {x: 37, y: 133}
   - name: BucketLad_Frame_12
     originalName: 
-    pivot: {x: 0.35999998, y: -0.52}
+    pivot: {x: 0.35999998, y: -0.5}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
       x: 4
-      y: 37
+      y: 38
       width: 25
-      height: 25
+      height: 26
     spriteID: d52c9a42f54a8114385e436a44bedb21
     spriteBone: []
     spriteOutline: []
@@ -378,18 +378,18 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 4, y: 37}
+    uvTransform: {x: 4, y: 38}
   - name: BucketLad_Frame_13
     originalName: 
-    pivot: {x: 0.3846154, y: -0.72727275}
+    pivot: {x: 0.3846154, y: -0.6956522}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
       x: 37
-      y: 34
+      y: 35
       width: 26
-      height: 22
+      height: 23
     spriteID: bf8538c372489284f90d53a23de6d221
     spriteBone: []
     spriteOutline: []
@@ -398,18 +398,18 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 37, y: 34}
+    uvTransform: {x: 37, y: 35}
   - name: BucketLad_Frame_14
     originalName: 
-    pivot: {x: 0.4736842, y: -0.4814815}
+    pivot: {x: 0.4736842, y: -0.46428573}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 71
-      y: 39
+      x: 37
+      y: 203
       width: 19
-      height: 27
+      height: 28
     spriteID: 2ae21bea6979dc8459ca1e7aea65b98f
     spriteBone: []
     spriteOutline: []
@@ -418,18 +418,18 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 71, y: 39}
+    uvTransform: {x: 37, y: 203}
   - name: BucketLad_Frame_15
     originalName: 
-    pivot: {x: 0.4736842, y: -0.4814815}
+    pivot: {x: 0.4736842, y: -0.46428573}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
       x: 71
-      y: 74
+      y: 4
       width: 19
-      height: 27
+      height: 28
     spriteID: d52926354ec29114fbd06c6c95d420c4
     spriteBone: []
     spriteOutline: []
@@ -438,7 +438,7 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 71, y: 74}
+    uvTransform: {x: 71, y: 4}
   - name: BucketLad_Frame_16
     originalName: 
     pivot: {x: 0.4545455, y: -0.44444445}
@@ -447,7 +447,7 @@ ScriptedImporter:
     rect:
       serializedVersion: 2
       x: 4
-      y: 134
+      y: 136
       width: 22
       height: 27
     spriteID: 83078961dca1ff749b6a26920eecae37
@@ -458,7 +458,7 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 4, y: 134}
+    uvTransform: {x: 4, y: 136}
   - name: BucketLad_Frame_17
     originalName: 
     pivot: {x: 0.4545455, y: -0.44444445}
@@ -467,7 +467,7 @@ ScriptedImporter:
     rect:
       serializedVersion: 2
       x: 4
-      y: 169
+      y: 171
       width: 22
       height: 27
     spriteID: 015fb5bd27f7e6f4f898547f4850cd44
@@ -478,18 +478,18 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 4, y: 169}
+    uvTransform: {x: 4, y: 171}
   - name: BucketLad_Frame_18
     originalName: 
-    pivot: {x: 0.4, y: -0.4814815}
+    pivot: {x: 0.4, y: -0.46428573}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
       x: 71
-      y: 175
+      y: 178
       width: 15
-      height: 27
+      height: 28
     spriteID: 9ec136d1a94789045be5e4aab58bd87e
     spriteBone: []
     spriteOutline: []
@@ -498,18 +498,18 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 71, y: 175}
+    uvTransform: {x: 71, y: 178}
   - name: BucketLad_Frame_19
     originalName: 
-    pivot: {x: 0.4, y: -0.4814815}
+    pivot: {x: 0.4, y: -0.46428573}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
       x: 71
-      y: 210
+      y: 214
       width: 15
-      height: 27
+      height: 28
     spriteID: 65a26f91c41d9db4c8b5bfb00e993ac1
     spriteBone: []
     spriteOutline: []
@@ -518,7 +518,7 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 71, y: 210}
+    uvTransform: {x: 71, y: 214}
   - name: BucketLad_Frame_20
     originalName: 
     pivot: {x: 0.5263158, y: -0.46428573}
@@ -526,8 +526,8 @@ ScriptedImporter:
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 37
-      y: 197
+      x: 71
+      y: 40
       width: 19
       height: 28
     spriteID: 115bd1bfda4729b468757e4fcc0fb25a
@@ -538,18 +538,18 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 37, y: 197}
+    uvTransform: {x: 71, y: 40}
   - name: BucketLad_Frame_21
     originalName: 
-    pivot: {x: 0.55, y: -0.4814815}
+    pivot: {x: 0.55, y: -0.46428573}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
       x: 37
-      y: 162
+      y: 167
       width: 20
-      height: 27
+      height: 28
     spriteID: 5482bc38d65298d4597785393127aad3
     spriteBone: []
     spriteOutline: []
@@ -558,18 +558,18 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 37, y: 162}
+    uvTransform: {x: 37, y: 167}
   - name: BucketLad_Frame_22
     originalName: 
-    pivot: {x: 0.4, y: -0.4814815}
+    pivot: {x: 0.4, y: -0.46428573}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
       x: 98
-      y: 36
+      y: 37
       width: 15
-      height: 27
+      height: 28
     spriteID: 1b647ea040ae2a24a8cecc3b2401eb8f
     spriteBone: []
     spriteOutline: []
@@ -578,7 +578,7 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 98, y: 36}
+    uvTransform: {x: 98, y: 37}
   spriteSheetImportData: []
   asepriteLayers:
   - layerIndex: 0
@@ -618,7 +618,7 @@ ScriptedImporter:
         x: 17
         y: 12
         width: 23
-        height: 24
+        height: 25
       spriteId: c550c5658f03b844b90ecc94380b62ae
     - name: BucketLad_Frame_4
       frameIndex: 4
@@ -626,7 +626,7 @@ ScriptedImporter:
         x: 20
         y: 12
         width: 20
-        height: 24
+        height: 25
       spriteId: 991f1a41965bc194bb74ed0c75fbb7ef
     - name: BucketLad_Frame_5
       frameIndex: 5
@@ -634,7 +634,7 @@ ScriptedImporter:
         x: 18
         y: 12
         width: 22
-        height: 25
+        height: 26
       spriteId: b1bbecdfd721a1444af63a187a7657c6
     - name: BucketLad_Frame_6
       frameIndex: 6
@@ -642,7 +642,7 @@ ScriptedImporter:
         x: 15
         y: 13
         width: 25
-        height: 25
+        height: 26
       spriteId: 1551e58cc7de1df47a6fb396baa6debf
     - name: BucketLad_Frame_7
       frameIndex: 7
@@ -650,7 +650,7 @@ ScriptedImporter:
         x: 14
         y: 16
         width: 26
-        height: 22
+        height: 23
       spriteId: 17f35c02d6f318547a6880f5c4b9ae09
     - name: BucketLad_Frame_8
       frameIndex: 8
@@ -666,7 +666,7 @@ ScriptedImporter:
         x: 17
         y: 12
         width: 23
-        height: 24
+        height: 25
       spriteId: 6421e60af7cf4744d9578717c45738cc
     - name: BucketLad_Frame_10
       frameIndex: 10
@@ -674,7 +674,7 @@ ScriptedImporter:
         x: 21
         y: 12
         width: 19
-        height: 24
+        height: 25
       spriteId: ed4caed35961ba24ab1f1d6ad261947d
     - name: BucketLad_Frame_11
       frameIndex: 11
@@ -682,7 +682,7 @@ ScriptedImporter:
         x: 18
         y: 12
         width: 22
-        height: 25
+        height: 26
       spriteId: 5519897d2b6775a43befe16524535550
     - name: BucketLad_Frame_12
       frameIndex: 12
@@ -690,7 +690,7 @@ ScriptedImporter:
         x: 15
         y: 13
         width: 25
-        height: 25
+        height: 26
       spriteId: d52c9a42f54a8114385e436a44bedb21
     - name: BucketLad_Frame_13
       frameIndex: 13
@@ -698,7 +698,7 @@ ScriptedImporter:
         x: 14
         y: 16
         width: 26
-        height: 22
+        height: 23
       spriteId: bf8538c372489284f90d53a23de6d221
     - name: BucketLad_Frame_14
       frameIndex: 14
@@ -706,7 +706,7 @@ ScriptedImporter:
         x: 15
         y: 13
         width: 19
-        height: 27
+        height: 28
       spriteId: 2ae21bea6979dc8459ca1e7aea65b98f
     - name: BucketLad_Frame_15
       frameIndex: 15
@@ -714,7 +714,7 @@ ScriptedImporter:
         x: 15
         y: 13
         width: 19
-        height: 27
+        height: 28
       spriteId: d52926354ec29114fbd06c6c95d420c4
     - name: BucketLad_Frame_16
       frameIndex: 16
@@ -738,7 +738,7 @@ ScriptedImporter:
         x: 18
         y: 13
         width: 15
-        height: 27
+        height: 28
       spriteId: 9ec136d1a94789045be5e4aab58bd87e
     - name: BucketLad_Frame_19
       frameIndex: 19
@@ -746,7 +746,7 @@ ScriptedImporter:
         x: 18
         y: 13
         width: 15
-        height: 27
+        height: 28
       spriteId: 65a26f91c41d9db4c8b5bfb00e993ac1
     - name: BucketLad_Frame_20
       frameIndex: 20
@@ -762,7 +762,7 @@ ScriptedImporter:
         x: 13
         y: 13
         width: 20
-        height: 27
+        height: 28
       spriteId: 5482bc38d65298d4597785393127aad3
     - name: BucketLad_Frame_22
       frameIndex: 22
@@ -770,7 +770,7 @@ ScriptedImporter:
         x: 18
         y: 13
         width: 15
-        height: 27
+        height: 28
       spriteId: 1b647ea040ae2a24a8cecc3b2401eb8f
     linkedCells: []
     parentIndex: -1

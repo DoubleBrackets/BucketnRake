@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using Cysharp.Threading.Tasks;
+using Sirenix.OdinInspector;
 using Unity.VisualScripting;
 using UnityEngine;
 
@@ -17,12 +18,17 @@ public class GameOrchestrator : MonoBehaviour
     private SceneLoader sceneLoader;
 
     [SerializeField]
+    private InGameUI inGameUI;
+
+    [SerializeField]
     private List<string> levelSceneNames;
 
     [SerializeField]
     private int startLevelDebug;
 
     private int currentLevel = 0;
+
+    private bool isLoading = false;
 
     private void Start()
     {
@@ -35,14 +41,24 @@ public class GameOrchestrator : MonoBehaviour
 
     private void CheckIfLevelCompleted(int cleaned, int total)
     {
-        if (cleaned == total)
+        if (cleaned >= total)
         {
             OnLevelCompleted();
         }
     }
 
-    public void OnLevelCompleted()
+    [Button("Beat Leve")]
+    public void BeatLevel()
     {
+        OnLevelCompleted();
+    }
+
+    public async UniTaskVoid OnLevelCompleted()
+    {
+        if (isLoading)
+            return;
+        
+        isLoading = true;
         currentLevel++;
         if (currentLevel >= levelSceneNames.Count)
         {
@@ -50,10 +66,15 @@ public class GameOrchestrator : MonoBehaviour
             return;
         }
 
-        StartLevel(currentLevel);
+        await UniTask.WaitForSeconds(2.5f);
+        await inGameUI.LevelOverTransitionOut();
+        await StartLevel(currentLevel);
+        await inGameUI.LevelOverTransitionIn();
+
+        isLoading = false;
     }
 
-    private async UniTaskVoid StartLevel(int level)
+    private async UniTask StartLevel(int level)
     {
         await sceneLoader.LoadLevel(levelSceneNames[level]);
         leafManager.InitializeLeaves();
