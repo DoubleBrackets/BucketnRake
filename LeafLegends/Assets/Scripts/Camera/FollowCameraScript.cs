@@ -36,7 +36,7 @@ public class FollowCameraScript : MonoBehaviour
 
     private void Update()
     {
-        if (playerAnchor.RakePlayerController == null)
+        if (playerAnchor.RakePlayerController == null || playerAnchor.BucketPlayerController == null)
         {
             return;
         }
@@ -51,16 +51,26 @@ public class FollowCameraScript : MonoBehaviour
         var upperBound = Mathf.Max(bucketPos.y, rakePos.y);
         var lowerBound = Mathf.Min(bucketPos.y, rakePos.y);
 
+        List<Transform> targets = new();
+        
         foreach (var target in AdditionalTargets)
         {
             if (target == null)
+            {
+                targets.Add(target);
                 continue;
+            }
             var pos = target.position;
             leftBound = Mathf.Min(leftBound, pos.x);
             rightBound = Mathf.Max(rightBound, pos.x);
 
             upperBound = Mathf.Max(upperBound, pos.y);
             lowerBound = Mathf.Min(lowerBound, pos.y);
+        }
+        
+        foreach (var target in targets)
+        {
+            AdditionalTargets.Remove(target);
         }
 
         leftBound -= widthMargin;

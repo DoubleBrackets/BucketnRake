@@ -182,8 +182,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Stage Complete!
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 165486f9bce79b24fbd45bba5b2aa1dc, type: 2}
-  m_sharedMaterial: {fileID: -5489752740203938311, guid: 165486f9bce79b24fbd45bba5b2aa1dc, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 2179d9671a56f8546b94858402115c54, type: 2}
+  m_sharedMaterial: {fileID: 827444920242189637, guid: 2179d9671a56f8546b94858402115c54, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -999,8 +999,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Music
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 165486f9bce79b24fbd45bba5b2aa1dc, type: 2}
-  m_sharedMaterial: {fileID: -5489752740203938311, guid: 165486f9bce79b24fbd45bba5b2aa1dc, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 2179d9671a56f8546b94858402115c54, type: 2}
+  m_sharedMaterial: {fileID: 827444920242189637, guid: 2179d9671a56f8546b94858402115c54, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -1379,8 +1379,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: New Text
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 165486f9bce79b24fbd45bba5b2aa1dc, type: 2}
-  m_sharedMaterial: {fileID: -5489752740203938311, guid: 165486f9bce79b24fbd45bba5b2aa1dc, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 2179d9671a56f8546b94858402115c54, type: 2}
+  m_sharedMaterial: {fileID: 827444920242189637, guid: 2179d9671a56f8546b94858402115c54, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -1587,7 +1587,7 @@ PrefabInstance:
       objectReference: {fileID: 1327840713}
     - target: {fileID: 1715162391790557099, guid: a80e9ebd57ede85439a2c6aab81498d2, type: 3}
       propertyPath: startLevelDebug
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1715162391790557099, guid: a80e9ebd57ede85439a2c6aab81498d2, type: 3}
       propertyPath: levelSceneNames.Array.size
@@ -1864,15 +1864,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3035228054902175498, guid: 5457ec04a5f5af544b979861837365a0, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 7.21
+      value: 35.68
       objectReference: {fileID: 0}
     - target: {fileID: 3035228054902175498, guid: 5457ec04a5f5af544b979861837365a0, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 4.08
+      value: 9.54
       objectReference: {fileID: 0}
     - target: {fileID: 3035228054902175498, guid: 5457ec04a5f5af544b979861837365a0, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: -0.041153908
       objectReference: {fileID: 0}
     - target: {fileID: 4231383621280297165, guid: 5457ec04a5f5af544b979861837365a0, type: 3}
       propertyPath: m_Name
@@ -1884,7 +1884,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4886499257787564939, guid: 5457ec04a5f5af544b979861837365a0, type: 3}
       propertyPath: orthographic size
-      value: 5
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 4886499257787564939, guid: 5457ec04a5f5af544b979861837365a0, type: 3}
       propertyPath: m_BackGroundColor.b
