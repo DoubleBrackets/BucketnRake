@@ -140,6 +140,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   musicSource: {fileID: 7670816211801624354}
   musicClip: {fileID: 8300000, guid: c7de349d66b3802418a24eac9395c523, type: 3}
+  sfxClips: []
 --- !u!1 &4691929173362155444
 GameObject:
   m_ObjectHideFlags: 0
@@ -344,6 +345,7 @@ MonoBehaviour:
   progressBar: {fileID: 0}
   progressText: {fileID: 0}
   leafManager: {fileID: 2495281591633758268}
+  levelOverGroup: {fileID: 0}
 --- !u!1 &6576033491115243002
 GameObject:
   m_ObjectHideFlags: 0
@@ -390,7 +392,7 @@ AudioSource:
   m_PlayOnAwake: 0
   m_Volume: 0.5
   m_Pitch: 1
-  Loop: 0
+  Loop: 1
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
@@ -519,6 +521,7 @@ MonoBehaviour:
   leafManager: {fileID: 2495281591633758268}
   playerSpawner: {fileID: 202198520540714672}
   sceneLoader: {fileID: 2661455384214103775}
+  inGameUI: {fileID: 0}
   levelSceneNames:
   - Level1
   startLevelDebug: 0

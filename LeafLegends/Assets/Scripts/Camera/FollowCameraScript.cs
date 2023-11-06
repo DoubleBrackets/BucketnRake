@@ -53,6 +53,8 @@ public class FollowCameraScript : MonoBehaviour
 
         foreach (var target in AdditionalTargets)
         {
+            if (target == null)
+                continue;
             var pos = target.position;
             leftBound = Mathf.Min(leftBound, pos.x);
             rightBound = Mathf.Max(rightBound, pos.x);
