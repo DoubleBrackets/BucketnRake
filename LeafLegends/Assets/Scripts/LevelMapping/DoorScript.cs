@@ -24,7 +24,8 @@ public class DoorScript : MonoBehaviour
 
     public void Open()
     {
-        renderer.sprite = openSprite;
+        if(renderer)
+            renderer.sprite = openSprite;
         StartCoroutine(OpenDoor());
     }
 

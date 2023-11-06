@@ -1587,7 +1587,7 @@ PrefabInstance:
       objectReference: {fileID: 1327840713}
     - target: {fileID: 1715162391790557099, guid: a80e9ebd57ede85439a2c6aab81498d2, type: 3}
       propertyPath: startLevelDebug
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1715162391790557099, guid: a80e9ebd57ede85439a2c6aab81498d2, type: 3}
       propertyPath: levelSceneNames.Array.size
