@@ -3,12 +3,24 @@
         "height": 4300,
         "width": 2
     },
-    "activeFile": "testingTilemap.tmx",
+    "activeFile": "Level1.tmx",
     "expandedProjectPaths": [
         "."
     ],
     "file.lastUsedOpenFilter": "All Files (*)",
     "fileStates": {
+        "Level1.tmx": {
+            "scale": 3,
+            "selectedLayer": 0,
+            "viewCenter": {
+                "x": 642.6666666666666,
+                "y": -144.33333333333331
+            }
+        },
+        "Main.tsx": {
+            "scaleInDock": 2,
+            "scaleInEditor": 8
+        },
         "Prototyping.tsx": {
             "scaleInDock": 3,
             "scaleInEditor": 1
@@ -17,8 +29,8 @@
             "scale": 1.5,
             "selectedLayer": 1,
             "viewCenter": {
-                "x": 426.3333333333333,
-                "y": -135.66666666666669
+                "x": 278.66666666666663,
+                "y": -128
             }
         }
     },
@@ -29,12 +41,16 @@
     "map.tileWidth": 16,
     "openFiles": [
         "testingTilemap.tmx",
-        "Prototyping.tsx"
+        "Prototyping.tsx",
+        "Main.tsx",
+        "Level1.tmx"
     ],
     "project": "LeafLegends.tiled-project",
     "recentFiles": [
+        "Level1.tmx",
         "testingTilemap.tmx",
-        "Prototyping.tsx"
+        "Prototyping.tsx",
+        "Main.tsx"
     ],
     "tileset.lastUsedFormat": "tsx",
     "tileset.tileSize": {

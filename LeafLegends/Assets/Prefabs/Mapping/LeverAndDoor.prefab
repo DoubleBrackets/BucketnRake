@@ -76,7 +76,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1.1, y: 3.9839907}
+  m_Size: {x: 1.2, y: 3.9839907}
   m_EdgeRadius: 0
 --- !u!212 &1490444105420766989
 SpriteRenderer:
@@ -160,7 +160,7 @@ Transform:
   m_GameObject: {fileID: 2885033630610321822}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 6.84, y: 11.56, z: 0}
+  m_LocalPosition: {x: 26.71, y: 9.51, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -181,9 +181,9 @@ MonoBehaviour:
   OnLeverPulled:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 5143703544735143847}
-        m_TargetAssemblyTypeName: SimpleAnimator, Assembly-CSharp
-        m_MethodName: Play
+      - m_Target: {fileID: 2094434245211090035}
+        m_TargetAssemblyTypeName: DoorScript, Assembly-CSharp
+        m_MethodName: Open
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -336,8 +336,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5934090086278939486}
-  - component: {fileID: 5143703544735143847}
-  - component: {fileID: 1691202324588896783}
+  - component: {fileID: 2094434245211090035}
   m_Layer: 0
   m_Name: Door
   m_TagString: Untagged
@@ -354,14 +353,15 @@ Transform:
   m_GameObject: {fileID: 4091185000133048251}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 13.88, y: 5.53, z: 0}
+  m_LocalPosition: {x: 37.971, y: -1.541, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 529214175865638979}
+  - {fileID: 6655648563489552662}
   m_Father: {fileID: 2954537059683415690}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &5143703544735143847
+--- !u!114 &2094434245211090035
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -370,33 +370,38 @@ MonoBehaviour:
   m_GameObject: {fileID: 4091185000133048251}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d10569e2e7f59f74ebd9b1a290eb3aeb, type: 3}
+  m_Script: {fileID: 11500000, guid: 80e4e25df545de0438ab0540df595f6e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  animationClip: {fileID: 7400000, guid: 3761fc9cf6e3d8446b1c351d58a3e21e, type: 2}
-  animator: {fileID: 1691202324588896783}
-  playOnAwake: 0
---- !u!95 &1691202324588896783
-Animator:
-  serializedVersion: 5
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4091185000133048251}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 0}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorStateOnDisable: 0
-  m_WriteDefaultValuesOnDisable: 0
+  openDuration: 2
+  renderer: {fileID: 1490444105420766989}
+  openSprite: {fileID: -922865026, guid: d7c9a1098e78dea40b0eced43b687718, type: 3}
+  targetPos: {fileID: 6655648563489552662}
+  doorBody: {fileID: 529214175865638979}
+  moveCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 1
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1 &7967161072792971165
 GameObject:
   m_ObjectHideFlags: 0
@@ -429,4 +434,35 @@ Transform:
   - {fileID: 19840782078150642}
   - {fileID: 5934090086278939486}
   m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &9216059914201454385
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6655648563489552662}
+  m_Layer: 0
+  m_Name: TargetPos
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6655648563489552662
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9216059914201454385}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 5.05, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 5934090086278939486}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
