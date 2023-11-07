@@ -1597,6 +1597,10 @@ PrefabInstance:
       propertyPath: levelSceneNames.Array.data[1]
       value: Level2
       objectReference: {fileID: 0}
+    - target: {fileID: 1715162391790557099, guid: a80e9ebd57ede85439a2c6aab81498d2, type: 3}
+      propertyPath: levelSceneNames.Array.data[2]
+      value: Prototyping
+      objectReference: {fileID: 0}
     - target: {fileID: 5366694114001333783, guid: a80e9ebd57ede85439a2c6aab81498d2, type: 3}
       propertyPath: m_Name
       value: Managers
@@ -1888,15 +1892,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4886499257787564939, guid: 5457ec04a5f5af544b979861837365a0, type: 3}
       propertyPath: m_BackGroundColor.b
-      value: 0.4392157
+      value: 0.45882353
       objectReference: {fileID: 0}
     - target: {fileID: 4886499257787564939, guid: 5457ec04a5f5af544b979861837365a0, type: 3}
       propertyPath: m_BackGroundColor.g
-      value: 0.3764706
+      value: 0.4627451
       objectReference: {fileID: 0}
     - target: {fileID: 4886499257787564939, guid: 5457ec04a5f5af544b979861837365a0, type: 3}
       propertyPath: m_BackGroundColor.r
-      value: 0.48235294
+      value: 0.5764706
       objectReference: {fileID: 0}
     - target: {fileID: 8815083828305672726, guid: 5457ec04a5f5af544b979861837365a0, type: 3}
       propertyPath: m_LocalPosition.x

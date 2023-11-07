@@ -33,7 +33,7 @@ public class InputReader : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.E))
         {
-            bucketPlayerInputProvider.InvokeSpecialAbility();
+            bucketPlayerInputProvider.InvokeSpecialAbility(); 
         }
 
         bucketPlayerInputProvider.GrappleTargetPressed = Input.GetKeyDown(KeyCode.LeftShift);

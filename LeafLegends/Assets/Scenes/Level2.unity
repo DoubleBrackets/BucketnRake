@@ -1235,9 +1235,12 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Press [LeftShift] to lock on to grapple points
+  m_text: 'Bucket Lad can
 
-    Press [E] to grapple!'
+    Press [LeftShift] to lock on to grapple points
+
+    Press
+    [E] to grapple!'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 165486f9bce79b24fbd45bba5b2aa1dc, type: 2}
   m_sharedMaterial: {fileID: -5489752740203938311, guid: 165486f9bce79b24fbd45bba5b2aa1dc, type: 2}
