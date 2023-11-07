@@ -1,4 +1,4 @@
-# Leaf-Legends
+# Rake-n-Bucket
 A Leaf-Whacking Co-op platformer!
 
 It's fall, and with it comes plenty of fallen leaves, a slipping hazard for the unwary player...
