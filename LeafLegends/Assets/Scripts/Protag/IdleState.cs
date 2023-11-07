@@ -6,13 +6,15 @@ public partial class ProtagController : MonoBehaviour
 {
     private bool stableOnGround => charController.CurrentStateContext.stableOnGround;
 
+    private float idleTime;
+
     // Idle State
     public void EnterIdleState()
     {
         ResetJumpVelocity();
         inputProvider.OnJumpPressed += TrySwitchToJumpState;
         inputProvider.OnSpecialAbilityPressed += TryGrapplingSwitch;
-        animator.Play("Idle");
+        idleTime = 0f;
     }
 
     public void ExitIdleState()
@@ -23,6 +25,11 @@ public partial class ProtagController : MonoBehaviour
 
     public void UpdateIdleState()
     {
+        idleTime += Time.deltaTime;
+        if (idleTime > 0.1f)
+        {
+            animator.Play("Idle");
+        }
         if (!stableOnGround)
         {
             SwitchStates(ProtagStates.Airborne);

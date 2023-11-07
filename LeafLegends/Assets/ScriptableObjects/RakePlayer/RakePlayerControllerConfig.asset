@@ -31,7 +31,7 @@ MonoBehaviour:
     GroundCastSizeReduction: 0.025
     GroundCapsuleCastDistance: 0.3
     GroundRayCastDistance: 0.3
-    GroundStickAccel: 20
+    GroundStickAccel: 100
     CanGrapple: 0
     GrapplePullSpeed: 0
     GrappleExitSpeed: 0

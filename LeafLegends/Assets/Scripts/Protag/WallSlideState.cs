@@ -54,7 +54,8 @@ public partial class ProtagController : MonoBehaviour
 
     private bool TryWallSlideSwitch()
     {
-        if (ControllerConfig.CanWallSlide && CheckWallSliding())
+        var stable = charController.CurrentStateContext.stableOnGround;
+        if (ControllerConfig.CanWallSlide && CheckWallSliding() && !stable)
         {
             return SwitchStates(ProtagStates.WallSlide);
         }
@@ -77,9 +78,11 @@ public partial class ProtagController : MonoBehaviour
             0.2f,
             ControllerConfig.WallSlideMask);
 
+        // Is this actually a wall
         if (hit.collider)
         {
-            return true;
+            bool isWall = Vector2.Angle(Vector2.up, hit.normal) > 85;
+            return isWall;
         }
 
         return false;

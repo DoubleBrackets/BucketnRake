@@ -100,7 +100,11 @@ public partial class ProtagController : MonoBehaviour
 
             // Flat surface counts as a slope
             var goingDownSlope = normal.x * vel.x >= 0f || Mathf.Abs(normal.x) < 0.01f;
-            if (slideInput && ControllerConfig.CanSlide && enoughSpeed && goingDownSlope && slideCooldownTimer <= 0f)
+            if (slideInput && 
+                ControllerConfig.CanSlide && 
+                enoughSpeed && 
+                goingDownSlope && 
+                slideCooldownTimer <= 0f)
             {
                 return SwitchStates(ProtagStates.Sliding);
             }

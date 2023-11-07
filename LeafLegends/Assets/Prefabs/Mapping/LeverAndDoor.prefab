@@ -373,7 +373,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 80e4e25df545de0438ab0540df595f6e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  openDuration: 2
+  openDuration: 1.25
   renderer: {fileID: 1490444105420766989}
   openSprite: {fileID: -922865026, guid: d7c9a1098e78dea40b0eced43b687718, type: 3}
   targetPos: {fileID: 6655648563489552662}

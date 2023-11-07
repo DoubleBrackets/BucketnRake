@@ -24,6 +24,7 @@ public class InGameUI : MonoBehaviour
     private void Awake()
     {
         leafManager.OnLeavesChanged += UpdateLeavesProgress;
+        ResetLevelOverUI();
     }
 
     private void OnDestroy()
@@ -39,25 +40,48 @@ public class InGameUI : MonoBehaviour
         progressText.text = $"<b>{val * 100:N0}%</b> Cleaned!";
     }
 
+    private void ResetLevelOverUI()
+    {
+        levelOverGroup.alpha = 0f;
+    }
+
     public async UniTask LevelOverTransitionIn()
     {
-        float time = 0f;
-        while (time <= 1f)
+        var token = gameObject.GetCancellationTokenOnDestroy();
+        try
         {
-            time += Time.deltaTime;
-            await UniTask.Yield(PlayerLoopTiming.Update);
-            levelOverGroup.alpha = 1 - time;
+            float time = 0f;
+            while (time <= 1f)
+            {
+                time += Time.deltaTime;
+                await UniTask.Yield(PlayerLoopTiming.Update);
+                token.ThrowIfCancellationRequested();
+                levelOverGroup.alpha = 1 - time;
+            }
+        }
+        finally
+        {
+            ResetLevelOverUI();
         }
     }
     
     public async UniTask LevelOverTransitionOut()
     {
-        float time = 0f;
-        while (time <= 1f)
+        var token = gameObject.GetCancellationTokenOnDestroy();
+        try
         {
-            time += Time.deltaTime;
-            await UniTask.Yield(PlayerLoopTiming.Update);
-            levelOverGroup.alpha = (time);
+            float time = 0f;
+            while (time <= 1f)
+            {
+                time += Time.deltaTime;
+                await UniTask.Yield(PlayerLoopTiming.Update);
+                token.ThrowIfCancellationRequested();
+                levelOverGroup.alpha = time;
+            }
+        }
+        finally
+        {
+            ResetLevelOverUI();
         }
     }
     
