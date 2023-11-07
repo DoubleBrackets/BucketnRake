@@ -8,3 +8,5 @@ Made in Unity for the 2023 GDAC Fall Game Jam
 
 Play the game here:
 https://doublebrackets.itch.io/rake-n-bucket
+
+<img width="332" alt="195" src="https://github.com/DoubleBrackets/Rake-n-Bucket/assets/29745653/06e64c1b-cc13-4ff1-8458-85b1c1ff574a">
