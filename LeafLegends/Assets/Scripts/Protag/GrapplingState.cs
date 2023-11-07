@@ -5,11 +5,9 @@ using UnityEngine;
 
 public partial class ProtagController : MonoBehaviour
 {
-    private GrapplePoint targetedGrapplePoint;
     private bool isGrappling = false;
-
     private GrapplePoint pointBeingGrappled;
-
+    
     private float grapplePullDuration;
 
     private Vector2 grappleVector;
@@ -125,7 +123,7 @@ public partial class ProtagController : MonoBehaviour
 
     private void TryGrapplingSwitch()
     {
-        if (targetedGrapplePoint != null && grappleCooldownTimer <= 0f && !isGrappling)
+        if (targetedGrapplePoint != null && grappleCooldownTimer <= 0f && !isGrappling && !isGrappleObstructed)
         {
             SwitchStates(ProtagStates.Grappling);
         }

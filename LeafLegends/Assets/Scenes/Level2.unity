@@ -1235,7 +1235,9 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Use [LeftShift] to toggle grapple targets
+  m_text: 'Press [LeftShift] to lock on to grapple points
+
+    Press [E] to grapple!'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 165486f9bce79b24fbd45bba5b2aa1dc, type: 2}
   m_sharedMaterial: {fileID: -5489752740203938311, guid: 165486f9bce79b24fbd45bba5b2aa1dc, type: 2}
@@ -1365,7 +1367,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 11.52, y: 3}
+  m_AnchoredPosition: {x: 11.69, y: 3}
   m_SizeDelta: {x: 20, y: 5}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1001 &1117156708
@@ -2815,7 +2817,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Try grappling your \npartner up to the ledge!"
+  m_text: You can grapple your buddy!
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 165486f9bce79b24fbd45bba5b2aa1dc, type: 2}
   m_sharedMaterial: {fileID: -5489752740203938311, guid: 165486f9bce79b24fbd45bba5b2aa1dc, type: 2}
@@ -3145,7 +3147,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8030779663688523058, guid: b888944172de11c43ac8e9a3bb984716, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -18.67
+      value: -19.56
+      objectReference: {fileID: 0}
+    - target: {fileID: 8030779663688523058, guid: b888944172de11c43ac8e9a3bb984716, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 7.83
+      objectReference: {fileID: 0}
+    - target: {fileID: 8253523675960998880, guid: b888944172de11c43ac8e9a3bb984716, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -16.91
+      objectReference: {fileID: 0}
+    - target: {fileID: 8253523675960998880, guid: b888944172de11c43ac8e9a3bb984716, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 7.76
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

@@ -21,12 +21,12 @@ public class InputReader : MonoBehaviour
     {
         bucketPlayerInputProvider.HorizontalAxis = (Input.GetKey(KeyCode.A) ? -1 : 0) + (Input.GetKey(KeyCode.D) ? 1 : 0);
         bucketPlayerInputProvider.VerticalAxis = (Input.GetKey(KeyCode.S) ? -1 : 0) + (Input.GetKey(KeyCode.W) ? 1 : 0);
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.Space))
         {
             bucketPlayerInputProvider.InvokeOnJumpPressed();
         }
 
-        if (Input.GetKeyUp(KeyCode.Space))
+        if (Input.GetKeyUp(KeyCode.W) || Input.GetKeyUp(KeyCode.Space))
         {
             bucketPlayerInputProvider.InvokeOnJumpReleased();
         }
@@ -35,6 +35,8 @@ public class InputReader : MonoBehaviour
         {
             bucketPlayerInputProvider.InvokeSpecialAbility();
         }
+
+        bucketPlayerInputProvider.GrappleTargetPressed = Input.GetKeyDown(KeyCode.LeftShift);
     }
 
     private void ReadRakePlayerInput()

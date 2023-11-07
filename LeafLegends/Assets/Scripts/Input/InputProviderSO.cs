@@ -17,6 +17,8 @@ public class InputProviderSO : ScriptableObject
     [ShowInInspector]
     public float VerticalAxis { get; set; }
 
+    public bool GrappleTargetPressed { get; set; }
+
     public void InvokeOnJumpPressed()
     {
         OnJumpPressed?.Invoke();

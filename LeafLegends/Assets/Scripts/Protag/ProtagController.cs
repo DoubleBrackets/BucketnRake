@@ -153,6 +153,11 @@ public partial class ProtagController : MonoBehaviour
                 UpdateCrouchState();
                 break;
         }
+
+        if (ControllerConfig.CanGrapple)
+        {
+            UpdateGrappleTargetting();
+        }
     }
 
     private void FixedUpdateStates()
@@ -203,11 +208,6 @@ public partial class ProtagController : MonoBehaviour
             rakeAbility.CanRake = charController.Velocity.sqrMagnitude > 0.1f;
         }
 
-        if (ControllerConfig.CanGrapple)
-        {
-            TrySearchForGrapplePoints();
-        }
-
         UpdateSpriteScaleAndRotation();
     }
 
@@ -241,40 +241,88 @@ public partial class ProtagController : MonoBehaviour
         }
     }
 
-    private Vector2 grappleSearchInput;
+    private List<GrapplePoint> inRangeGrapplePoints = new();
+    private GrapplePoint targetedGrapplePoint;
+    private bool isGrappleObstructed;
 
-    private void TrySearchForGrapplePoints()
+    private void UpdateGrappleTargetting()
     {
+        // We recalculate every frame, so just clear everything at the start
         if (targetedGrapplePoint != null)
         {
             targetedGrapplePoint.IsCurrentTarget(false);
             grappleVisuals.ClearTarget();
             FollowCameraScript.Instance.AdditionalTargets.Remove(targetedGrapplePoint.transform);
+        }
+        
+        inRangeGrapplePoints.Clear();
+
+        // Get points in range
+        GetAllGrapplePoints();
+        
+        if (inRangeGrapplePoints.Count == 0)
+            return;
+
+        bool currentPointInTargeted = inRangeGrapplePoints.Contains(targetedGrapplePoint);
+        // If the current target is not in range, then clear it from current target
+        if (targetedGrapplePoint != null && !currentPointInTargeted)
+        {
             targetedGrapplePoint = null;
         }
+        
+        // Shift targets
+        if (inputProvider.GrappleTargetPressed)
+        {
+            if (currentPointInTargeted)
+            {
+                int grappleIndex = inRangeGrapplePoints.FindIndex(a => a == targetedGrapplePoint);
+                grappleIndex = (grappleIndex + 1) % inRangeGrapplePoints.Count;
+                targetedGrapplePoint = inRangeGrapplePoints[grappleIndex];
+            }
+            else
+            {
+                targetedGrapplePoint = inRangeGrapplePoints[0];
+            }
+        }
+
+        if (targetedGrapplePoint == null)
+            return;
+        
+        // Indicate the current target
+        targetedGrapplePoint.IsCurrentTarget(true);
+        FollowCameraScript.Instance.AdditionalTargets.Add(targetedGrapplePoint.transform);
 
         if (isGrappling || grappleCooldownTimer > 0f)
         {
             return;
         }
+        
+        if (targetedGrapplePoint != null)
+        {
+            // Raycast check if any terrain is in the way
+            Vector2 delta = targetedGrapplePoint.transform.position - transform.position;
+            var cast = Physics2D.Raycast(
+                transform.position,
+                delta,
+                delta.magnitude,
+                ControllerConfig.GroundLayerMask);
 
+            if (cast.collider == null)
+            {
+                grappleVisuals.IndicateTarget(targetedGrapplePoint);
+                isGrappleObstructed = false;
+            }
+            else
+            {
+                isGrappleObstructed = true;
+            }
+        }
+    }
+
+    private void GetAllGrapplePoints()
+    {
         // Find all points in the radius
         var colliders = Physics2D.OverlapCircleAll(transform.position, ControllerConfig.GrappleRadius, ControllerConfig.GrappleLayerMask);
-
-        var inputVector = new Vector2(inputProvider.HorizontalAxis, inputProvider.VerticalAxis);
-        if (inputVector != Vector2.zero)
-        {
-            grappleSearchInput = inputVector;
-        }
-        else
-        {
-            inputVector = grappleSearchInput;
-        }
-
-        // Choose the point that aligns to the input vector the most
-        GrapplePoint bestCandidate = null;
-        var closestDist = float.MaxValue;
-        var closestSector = int.MaxValue;
 
         foreach (var coll in colliders)
         {
@@ -285,47 +333,16 @@ public partial class ProtagController : MonoBehaviour
                 continue;
             }
 
-            // Raycast check if any terrain is in the way
-            Vector2 delta = grapplePoint.transform.position - transform.position;
-            var cast = Physics2D.Raycast(
-                transform.position,
-                delta,
-                delta.magnitude,
-                ControllerConfig.GroundLayerMask);
-
-            if (cast.collider != null)
-            {
-                continue;
-            }
-
-            var angleSector = (int)(Vector2.Angle(delta, inputVector) / 45);
-            var dist = delta.magnitude;
-
-            if (inputVector == Vector2.zero)
-            {
-                angleSector = 0;
-            }
-
-            // Choose the point that is in the same 45 degree cone, and is closest
-            if (angleSector < closestSector)
-            {
-                closestSector = angleSector;
-                closestDist = dist;
-                bestCandidate = grapplePoint;
-            }
-            else if (angleSector == closestSector && dist < closestDist)
-            {
-                closestDist = dist;
-                bestCandidate = grapplePoint;
-            }
+            inRangeGrapplePoints.Add(grapplePoint);
         }
-
-        if (bestCandidate != null)
+        
+        // Sort based on distance
+        inRangeGrapplePoints.Sort((point1, point2) =>
         {
-            targetedGrapplePoint = bestCandidate;
-            targetedGrapplePoint.IsCurrentTarget(true);
-            grappleVisuals.IndicateTarget(bestCandidate);
-            FollowCameraScript.Instance.AdditionalTargets.Add(targetedGrapplePoint.transform);
-        }
+            var position = transform.position;
+            float dist1 = Vector2.Distance(position, point1.transform.position);
+            float dist2 = Vector2.Distance(position, point2.transform.position);
+            return dist1.CompareTo(dist2);
+        });
     }
 }
