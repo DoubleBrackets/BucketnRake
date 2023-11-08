@@ -8,6 +8,7 @@ public partial class ProtagController : MonoBehaviour
     private float jumpTimer = 0f;
 
     private Vector2 jumpVelocity;
+    private bool doVariableJump = true;
 
     // Jump State
     public void EnterJumpState()
@@ -29,9 +30,12 @@ public partial class ProtagController : MonoBehaviour
 
     private void ExitJumpEarly()
     {
-        charController.Velocity = new Vector2(
-            charController.Velocity.x,
-            charController.Velocity.y / 2.5f);
+        if (doVariableJump)
+        {
+            charController.Velocity = new Vector2(
+                charController.Velocity.x,
+                charController.Velocity.y / 2.5f);
+        }
         SwitchStates(ProtagStates.Airborne);
     }
 
@@ -123,6 +127,7 @@ public partial class ProtagController : MonoBehaviour
 
     private void ResetJumpVelocity()
     {
+        doVariableJump = false;
         jumpVelocity = new Vector2(0f, ControllerConfig.JumpVelocity);
     }
 }

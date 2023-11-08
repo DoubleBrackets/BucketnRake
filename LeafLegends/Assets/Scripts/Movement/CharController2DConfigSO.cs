@@ -58,7 +58,7 @@ public class CharController2DConfig
 
     [SerializeField] public float WallSlideCastSizeYReduction;
     [SerializeField] public float WallSlideVel;
-    [SerializeField] public float WallJumpVel;
+    [SerializeField] public Vector2 WallSlideJumpVel;
     [SerializeField] public LayerMask WallSlideMask;
 
     [Header("Crouching"), SerializeField]

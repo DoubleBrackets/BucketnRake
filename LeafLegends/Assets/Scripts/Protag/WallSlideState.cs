@@ -49,7 +49,9 @@ public partial class ProtagController : MonoBehaviour
 
     private void PrepWallJump()
     {
-        jumpVelocity.x = -currentMoveInput.horizontalInput * ControllerConfig.WallJumpVel;
+        jumpVelocity.x = -currentMoveInput.horizontalInput * ControllerConfig.WallSlideJumpVel.x;
+        jumpVelocity.y = ControllerConfig.WallSlideJumpVel.y;
+        doVariableJump = false;
     }
 
     private bool TryWallSlideSwitch()
