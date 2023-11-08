@@ -44,7 +44,7 @@ public class InputReader : MonoBehaviour
         rakePlayerInputProvider.HorizontalAxis = (Input.GetKey(KeyCode.LeftArrow) ? -1 : 0) + (Input.GetKey(KeyCode.RightArrow) ? 1 : 0);
         rakePlayerInputProvider.VerticalAxis = (Input.GetKey(KeyCode.DownArrow) ? -1 : 0) + (Input.GetKey(KeyCode.UpArrow) ? 1 : 0);
 
-        if (Input.GetKeyDown(KeyCode.UpArrow) || Input.GetKeyDown(KeyCode.RightControl) || Input.GetKeyUp(KeyCode.Question))
+        if (Input.GetKeyDown(KeyCode.UpArrow) || Input.GetKeyDown(KeyCode.RightControl) || Input.GetKeyDown(KeyCode.Question))
         {
             rakePlayerInputProvider.InvokeOnJumpPressed();
         }
